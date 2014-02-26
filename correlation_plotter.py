@@ -22,7 +22,7 @@ logging.info("starting programming and configuring")
 fpga = corr.katcp_wrapper.FpgaClient("localhost", 7147)
 time.sleep(0.1)
 fpga.progdev("jgowans_snapshot_grabber_2014_Feb_25_1514.bof")
-fpga.write_int("trig_level", 4)
+fpga.write_int("trig_level", 20)
 time.sleep(0.1)
 # arm the snapshot blocks
 fpga.snapshot_arm("adc0_snap", man_trig=False, man_valid=False, offset=-1, circular_capture=False)
@@ -36,6 +36,9 @@ adc1_data = fpga.snapshot_get("adc1_snap", wait_period=-1, arm=False)["data"]
 logging.info("captured. unpacking data")
 signal1 = struct.unpack(str(SNAPSHOT_BLOCK_SIZE ) + "b", (adc0_data))
 signal2 = struct.unpack(str(SNAPSHOT_BLOCK_SIZE ) + "b", (adc1_data))
+#cater for ADC offset
+signal1 = signal1 -  numpy.mean(signal1)
+signal2 = signal2 - numpy.mean(signal2)
 full_signal_time_axis = numpy.arange(0, SNAPSHOT_BLOCK_SIZE/SAMPLE_FREQUENCY, 1/SAMPLE_FREQUENCY)
 full_signal_time_axis = [i*1e6 for i in full_signal_time_axis] #convert the axis to microseconds
 f, (ax1, ax2) = plt.subplots(2, 1, sharey=True, sharex=True)
@@ -48,6 +51,10 @@ start_sample = int( (time_to_correlate_from/1.0e6) * SAMPLE_FREQUENCY )
 end_sample = int( (time_to_correlate_to/1.0e6) * SAMPLE_FREQUENCY )
 subsample_length = end_sample - start_sample
 
+#means
+print numpy.mean(signal1)
+print numpy.mean(signal2)
+
 signal1_sub = signal1[start_sample:end_sample]
 signal2_sub = signal2[start_sample:end_sample]
 subsignal_time_axis = numpy.linspace(time_to_correlate_from, time_to_correlate_to, subsample_length*RESAMPLE_FACTOR, endpoint=False)
@@ -57,7 +64,8 @@ signal1_upsampled = signal.resample(signal1_sub, len(signal1_sub)*RESAMPLE_FACTO
 signal2_upsampled = signal.resample(signal2_sub, len(signal2_sub)*RESAMPLE_FACTOR)
 logging.info("correlating")
 correlation = numpy.correlate(signal1_upsampled, signal2_upsampled, "full")
-logging.info("correlation complete")
+logging.info("correlation complete. starting FFT.")
+signal1_fft = numpy.abs(numpy.fft.rfft(signal1))
 
 index_of_max_value = correlation.argmax()
 samples_delay = len(signal1_upsampled) - index_of_max_value - 1
@@ -74,18 +82,21 @@ ax_sig1 = fig.add_subplot(321)
 ax_sig2 = fig.add_subplot(323, sharex=ax_sig1, sharey=ax_sig1)
 ax_sig1sub = fig.add_subplot(322)
 ax_sig2sub = fig.add_subplot(324, sharex=ax_sig1sub, sharey=ax_sig1sub)
-ax_correlation = fig.add_subplot(313)
+ax_correlation = fig.add_subplot(325)
+ax_fft = fig.add_subplot(326)
 # label the axis
 ax_sig1.set_title("full ADC0 dump")
 ax_sig2.set_title("full ADC1 dump")
 ax_sig1sub.set_title("ADC0 subset for correlation")
 ax_sig2sub.set_title("ADC1 subset for correlation")
 ax_correlation.set_title("Cross correlation")
+ax_fft.set_title("FFT of signal_1")
 # add the graphs to the axis
 ax_sig1.plot(full_signal_time_axis, signal1)
 ax_sig2.plot(full_signal_time_axis, signal2)
 ax_sig1sub.plot(subsignal_time_axis, signal1_upsampled)
 ax_sig2sub.plot(subsignal_time_axis, signal2_upsampled)
 ax_correlation.plot(correlation)
+ax_fft.plot(signal1__fft)
 plt.show()
 
