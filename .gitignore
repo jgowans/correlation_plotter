@@ -36,6 +36,6 @@ nosetests.xml
 .pydevproject
 
 # prevent adding of matlab compiled files
-/roach_firmware/**
+/roach_firmware/*/**
 #but allow matching of .mdl files
 !/roach_firmware/*/*.mdl
