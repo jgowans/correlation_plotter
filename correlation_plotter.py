@@ -65,19 +65,32 @@ signal_axis = numpy.linspace(0, (SNAPSHOT_BLOCK_SIZE/SAMPLE_FREQUENCY) * 1e6, SN
 # get the FFT of the signals
 fft_signal0_axis, fft_signal0 = get_fft_and_axis(signal0)
 fft_signal1_axis, fft_signal1 = get_fft_and_axis(signal1)
+fft_correlation = []
+for i in range(0,len(fft_signal1)):
+    fft_correlation.append(fft_signal0[i] * numpy.conjugate((fft_signal1[i])))
+
+
 
 # create and link the axes
 fig = plt.figure()
-ax_signal0 = fig.add_subplot(221)
-ax_fft_signal0 = fig.add_subplot(223)
-ax_signal1 = fig.add_subplot(222, sharex=ax_signal0, sharey=ax_signal0)
-ax_fft_signal1 = fig.add_subplot(224, sharex=ax_fft_signal0, sharey=ax_fft_signal0)
+ax_signal0 = fig.add_subplot(231)
+ax_fft_signal0 = fig.add_subplot(232)
+ax_fft_signal0_phase = fig.add_subplot(233, sharex=ax_fft_signal0)
+#ax_signal1 = fig.add_subplot(334, sharex=ax_signal0, sharey=ax_signal0)
+#ax_fft_signal1 = fig.add_subplot(335, sharex=ax_fft_signal0, sharey=ax_fft_signal0)
+#ax_fft_signal1_phase = fig.add_subplot(336, sharex=ax_fft_signal0, sharey=ax_fft_signal0_phase)
+ax_fft_correlation = fig.add_subplot(235, sharex=ax_fft_signal0)
+ax_fft_correlation_phase = fig.add_subplot(236, sharex=ax_fft_signal0, sharey=ax_fft_signal0_phase)
 # lable the axes
 # add the plots
 ax_signal0.plot(signal_axis, signal0)
 ax_fft_signal0.plot(fft_signal0_axis, numpy.abs(fft_signal0))
-ax_signal1.plot(signal_axis, signal1)
-ax_fft_signal1.plot(fft_signal1_axis, numpy.abs(fft_signal1))
+ax_signal0.plot(signal_axis, signal1,"r")
+ax_fft_signal0.plot(fft_signal1_axis, numpy.abs(fft_signal1), "r")
+ax_fft_signal0_phase.plot(fft_signal0_axis, numpy.angle(fft_signal0))
+ax_fft_signal0_phase.plot(fft_signal1_axis, numpy.angle(fft_signal1), "r")
+ax_fft_correlation.plot(fft_signal0_axis, numpy.abs(fft_correlation))
+ax_fft_correlation_phase.plot(fft_signal0_axis, numpy.angle(fft_correlation))
 fig.show()
 
 # get user input regarding the interesting part of the signal
