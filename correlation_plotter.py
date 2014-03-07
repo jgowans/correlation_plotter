@@ -40,7 +40,7 @@ def cross_correlate(signal0, signal1):
 logging.info("starting programming and configuring")
 fpga = corr.katcp_wrapper.FpgaClient("localhost", 7147)
 time.sleep(0.1)
-fpga.progdev("jgowans_snapshot_grabber_2014_Feb_27_1324.bof")
+fpga.progdev("jgowans_snapshot_grabber_2014_Feb_27_1551.bof")
 fpga.write_int("trig_level", 1)
 time.sleep(0.1)
 # arm the snapshot blocks
