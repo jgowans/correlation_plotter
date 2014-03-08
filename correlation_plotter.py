@@ -136,3 +136,14 @@ print "angle of arrival: " + str(round(angle, 3)) + " radians or " + str(round(n
 
 plt.show()
 
+# all of the above stuff should be put into methods. The algorithm should be as follows:
+# you are at <coordinates>. confirm?
+# run un-triggered dump.
+# provide oportunity to set trigger level
+# wait for trigger
+# plot fft
+# interested?
+# correlation interval?
+# plot correlation and output AOA.
+# save and log?
+# write coordinates and AOA to log file. save PNG to directory (name = time)
