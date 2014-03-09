@@ -17,6 +17,7 @@ config_file = os.getenv('HOME') + "/correlation_plotter_config"
 SNAPSHOT_BLOCK_SIZE = 131072
 SAMPLE_FREQUENCY = 800.0e6
 RESAMPLE_FACTOR = 10
+ANTENNA_SPACING_METRES = 5.0
 
 def get_fft_and_axis(signal, resample_factor=1):
     '''Note: the FFT returned is complex. The axis is in units MHz'''
@@ -27,14 +28,13 @@ def get_fft_and_axis(signal, resample_factor=1):
 def get_upsampled_subsignal_and_axis(signal, start_sample, end_sample):
     '''Note: end_sample is not included'''
     subsignal = signal[start_sample:end_sample]
-    upsampled_subsignal = resample(subsignal, len(subsignal)*RESAMPLE_FACTOR)
+    upsampled_subsignal = scipy.signal.resample(subsignal, len(subsignal)*RESAMPLE_FACTOR)
     start_time = (start_sample/SAMPLE_FREQUENCY) * 1e6
     end_time = (end_sample/SAMPLE_FREQUENCY) * 1e6
     upsampled_subsignal_axis = numpy.linspace(start_time, end_time, len(upsampled_subsignal), endpoint=False)
     return upsampled_subsignal_axis, upsampled_subsignal
 
 def cross_correlate(signal0, signal1):
-    correlation = numpy.correlate(signal0, signal1, "full")
     return correlation
 
 def plot_initial_signals(signal0, signal1):
@@ -42,8 +42,9 @@ def plot_initial_signals(signal0, signal1):
     signal_axis = numpy.linspace(0, (SNAPSHOT_BLOCK_SIZE/SAMPLE_FREQUENCY) * 1e6, SNAPSHOT_BLOCK_SIZE, endpoint=False)
 
     # get the FFT of the signals
-    fft_signal0_axis, fft_signal0 = get_fft_and_axis(signal0)
-    fft_signal1_axis, fft_signal1 = get_fft_and_axis(signal1)
+    fft_signal0 = numpy.fft.rfft(signal0)
+    fft_signal1 = numpy.fft.rfft(signal1)
+    fft_axis = numpy.linspace(0, (SAMPLE_FREQUENCY/2.0)/1e6, len(fft_signal0), endpoint=False)
     # create and link the axes
     fig = plt.figure()
     ax_signal0 = fig.add_subplot(231)
@@ -55,11 +56,11 @@ def plot_initial_signals(signal0, signal1):
     # TODO: lable the axes
     # add the plots
     ax_signal0.plot(signal_axis, signal0)
-    ax_fft_signal0.plot(fft_signal0_axis, numpy.abs(fft_signal0))
-    ax_fft_signal0_phase.plot(fft_signal0_axis, numpy.angle(fft_signal0))
+    ax_fft_signal0.plot(fft_axis, numpy.abs(fft_signal0))
+    ax_fft_signal0_phase.plot(fft_axis, numpy.angle(fft_signal0))
     ax_signal1.plot(signal_axis, signal1)
-    ax_fft_signal1.plot(fft_signal1_axis, numpy.abs(fft_signal1))
-    ax_fft_signal1_phase.plot(fft_signal1_axis, numpy.angle(fft_signal1))
+    ax_fft_signal1.plot(fft_axis, numpy.abs(fft_signal1))
+    ax_fft_signal1_phase.plot(fft_axis, numpy.angle(fft_signal1))
     fig.show()
 
 def get_triggered_snapshot():
@@ -90,15 +91,21 @@ def plot_correlation_and_get_angle(signal0, signal1):
     time_to_correlate_to = float(raw_input("UNTIL when should the correlation consider data? (microseconds):  "))
     start_sample = int( (time_to_correlate_from/1.0e6) * SAMPLE_FREQUENCY )
     end_sample = int( (time_to_correlate_to/1.0e6) * SAMPLE_FREQUENCY )
+    
+    sub_signal0 = signal0[start_sample:end_sample]
+    sub_signal1 = signal1[start_sample:end_sample]
+    upsampled_sub_signal0 = scipy.signal.resample(sub_signal0, len(sub_signal0)*RESAMPLE_FACTOR)
+    upsampled_sub_signal1 = scipy.signal.resample(sub_signal1, len(sub_signal1)*RESAMPLE_FACTOR)
+    start_time = (start_sample/SAMPLE_FREQUENCY) * 1e6
+    end_time = (end_sample/SAMPLE_FREQUENCY) * 1e6
+    upsampled_sub_signal_axis = numpy.linspace(start_time, end_time, len(upsampled_sub_signal0), endpoint=False)
 
-    # upsample
-    upsampled_sub_signal0_axis, upsampled_sub_signal0 = get_upsampled_subsignal_and_axis(signal0, start_sample, end_sample)
-    upsampled_sub_signal1_axis, upsampled_sub_signal1 = get_upsampled_subsignal_and_axis(signal1, start_sample, end_sample)
-    # get FFT up subsignal
-    fft_upsampled_sub_signal0_axis, fft_upsampled_sub_signal0 = get_fft_and_axis(upsampled_sub_signal0)
-    fft_upsampled_sub_signal1_axis, fft_upsampled_sub_signal1 = get_fft_and_axis(upsampled_sub_signal0)
+    # get FFT of  subsignal
+    fft_sub_signal0 = numpy.fft.rfft(signal0)
+    fft_sub_signal1 = numpy.fft.rfft(signal1)
+    fft_sub_signal_axis = numpy.linspace(0, (SAMPLE_FREQUENCY/2.0)/1e6, len(fft_sub_signal0), endpoint=False)
     # get the correlation of the upsampled signals
-    correlation = cross_correlate(upsampled_sub_signal0, upsampled_sub_signal1)
+    correlation = numpy.correlate(upsampled_sub_signal0, upsampled_sub_signal1, "full")
 
     #create the axes
     # create and link the axes
@@ -110,28 +117,28 @@ def plot_correlation_and_get_angle(signal0, signal1):
     ax_correlation = fig.add_subplot(313)
     # lable the axes
     # add the plots
-    ax_signal0.plot(upsampled_sub_signal0_axis, upsampled_sub_signal0)
-    ax_fft_signal0.plot(fft_upsampled_sub_signal0_axis, numpy.abs(fft_upsampled_sub_signal0))
-    ax_signal1.plot(upsampled_sub_signal1_axis, upsampled_sub_signal1)
-    ax_fft_signal1.plot(fft_upsampled_sub_signal1_axis, numpy.abs(fft_upsampled_sub_signal1))
+    ax_signal0.plot(upsampled_sub_signal_axis, upsampled_sub_signal0)
+    ax_fft_signal0.plot(fft_sub_signal_axis, numpy.abs(fft_sub_signal0))
+    ax_signal1.plot(upsampled_sub_signal_axis, upsampled_sub_signal1)
+    ax_fft_signal1.plot(fft_sub_signal_axis, numpy.abs(fft_sub_signal1))
     ax_correlation.plot(correlation)
-    plt.show()
+    fig.show()
 
     index_of_max_value = correlation.argmax()
     samples_delay = len(upsampled_sub_signal0) - index_of_max_value - 1
     print "antenna 2 is delayed from antenna 1 by " + str(samples_delay) + " samples"
     time_delay = (1.0/(SAMPLE_FREQUENCY * RESAMPLE_FACTOR)) * samples_delay
-    delay_max = ANTENNA_SPACING_METRES / SPEED_OF_LIGHT
+    delay_max = ANTENNA_SPACING_METRES / scipy.constants.c
     print "delay max: " + str(delay_max) + "  time_delay: " + str(time_delay)
     angle = numpy.arcsin(time_delay / delay_max)
     print "angle of arrival: " + str(round(angle, 3)) + " radians or " + str(round(numpy.degrees(angle), 3)) + " degrees"
     return angle
 
 def verify_paramaters():
-    print global_config["latitude"] + " N    " + global_config["longitude"] + " W"
+    print "{:f} N   {:f} W".format(global_config["latitude"],  global_config["longitude"])
     if raw_input("Are the above coordinates correct? ") != "y":
         exit()
-    print global_config["antenna_angle"]
+    print global_config["antenna_angle_degrees"]
     if raw_input("Is the above angle correct? ") != "y":
         exit()
 
@@ -144,9 +151,7 @@ global_config = json.load(open(config_file))
 logging.info("starting programming and configuring")
 fpga = corr.katcp_wrapper.FpgaClient("localhost", 7147)
 time.sleep(1)
-fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_09_1345.bof")
-fpga.write_int("adc_delay", 4096) #max = 2^12 = 4096 which is about 20 us
-time.sleep(1)
+fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_09_1825.bof")
 fpga.write_int("trig_level", 0)
 signal0, signal1 = get_triggered_snapshot()
 fpga.write_int("trig_level", 10)
