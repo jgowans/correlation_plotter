@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.213"
+    ComputedModelVersion    "1.215"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [929.0, 19.0, 1000.0, 1190.0]
+      Location		      [909.0, 19.0, 1020.0, 1190.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,16 +55,16 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [944.0, 995.0]
-	  ZoomFactor		  [1.75]
-	  Offset		  [558.38825265969967, 789.65065967920964]
+	  Extents		  [964.0, 995.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [165.78282970437829, 530.4693504058697]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "79"
-	  Extents		  [944.0, 995.0]
+	  Extents		  [964.0, 995.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [-18.125, 247.23828125]
 	}
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jgowans"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 09 18:22:31 2014"
-  RTWModifiedTimeStamp	  316273236
-  ModelVersionFormat	  "1.%<AutoIncrement:213>"
+  LastModifiedDate	  "Fri Mar 14 15:20:39 2014"
+  RTWModifiedTimeStamp	  316711223
+  ModelVersionFormat	  "1.%<AutoIncrement:215>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -118,7 +118,7 @@ Model {
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "jgowans_snapshot_no_fft"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -897,7 +897,7 @@ Model {
   }
   System {
     Name		    "jgowans_snapshot_no_fft"
-    Location		    [929, 19, 1929, 1209]
+    Location		    [909, 19, 1929, 1209]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -909,7 +909,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "175"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "656"
     Block {
@@ -1649,7 +1649,7 @@ Model {
       clk_src		      "adc0_clk"
       ROACH_clk_src	      "adc0_clk"
       ROACH2_clk_src	      "adc0_clk"
-      clk_rate		      "200"
+      clk_rate		      "250"
       sample_period	      "1"
       synthesis_tool	      "XST"
     }
@@ -1723,7 +1723,7 @@ Model {
       SourceBlock	      "xps_library/adc"
       SourceType	      "adc"
       adc_brd		      "adc0"
-      adc_clk_rate	      "800"
+      adc_clk_rate	      "1000"
       adc_interleave	      off
       sample_period	      "1"
     }
@@ -8923,7 +8923,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "8161"
+	    SIDHighWatermark	    "8189"
 	    SIDPrevWatermark	    "6530"
 	    Block {
 	      BlockType		      Inport
@@ -8936,10 +8936,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "324:476:8156"
+	      SID		      "324:476:8184"
 	      Ports		      [1, 1]
 	      Position		      [1000, 100, 1050, 120]
-	      ZOrder		      8108
+	      ZOrder		      8136
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -8968,10 +8968,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "jgowans_snapshot_no_fft_adc0_snap_ctrl_user_data_out"
-	      SID		      "324:476:8155"
+	      SID		      "324:476:8183"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      8107
+	      ZOrder		      8135
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway In"
 	      SourceType	      "Xilinx Gateway In Block"
@@ -9014,10 +9014,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "324:476:8161"
+	      SID		      "324:476:8189"
 	      Ports		      [1, 1]
 	      Position		      [1300, 100, 1350, 120]
-	      ZOrder		      8113
+	      ZOrder		      8141
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -9045,10 +9045,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "slice_reg"
-	      SID		      "324:476:8160"
+	      SID		      "324:476:8188"
 	      Ports		      [1, 1]
 	      Position		      [1100, 100, 1150, 120]
-	      ZOrder		      8112
+	      ZOrder		      8140
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
@@ -9413,7 +9413,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "7697"
+	    SIDHighWatermark	    "7717"
 	    SIDPrevWatermark	    "6530"
 	    Block {
 	      BlockType		      Inport
@@ -9426,10 +9426,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "assert_reg"
-	      SID		      "324:515:7696"
+	      SID		      "324:515:7716"
 	      Ports		      [1, 1]
 	      Position		      [200, 100, 250, 120]
-	      ZOrder		      7648
+	      ZOrder		      7668
 	      ShowName		      off
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Assert"
@@ -9464,10 +9464,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "cast_gw"
-	      SID		      "324:515:7694"
+	      SID		      "324:515:7714"
 	      Ports		      [1, 1]
 	      Position		      [700, 100, 750, 120]
-	      ZOrder		      7646
+	      ZOrder		      7666
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Convert"
 	      SourceType	      "Xilinx Type Converter Block"
@@ -9503,10 +9503,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "324:515:7693"
+	      SID		      "324:515:7713"
 	      Ports		      [1, 1]
 	      Position		      [600, 100, 650, 120]
-	      ZOrder		      7645
+	      ZOrder		      7665
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -9535,10 +9535,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "jgowans_snapshot_no_fft_adc0_snap_status_user_data_in"
-	      SID		      "324:515:7695"
+	      SID		      "324:515:7715"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      7647
+	      ZOrder		      7667
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway Out"
 	      SourceType	      "Xilinx Gateway Out Block"
@@ -9570,10 +9570,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "324:515:7697"
+	      SID		      "324:515:7717"
 	      Ports		      [1, 1]
 	      Position		      [300, 100, 350, 120]
-	      ZOrder		      7649
+	      ZOrder		      7669
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -9962,7 +9962,7 @@ Model {
       SourceBlock	      "xps_library/adc"
       SourceType	      "adc"
       adc_brd		      "adc1"
-      adc_clk_rate	      "800"
+      adc_clk_rate	      "1000"
       adc_interleave	      off
       sample_period	      "1"
     }
@@ -17160,7 +17160,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "8161"
+	    SIDHighWatermark	    "8189"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "sim_1"
@@ -17172,10 +17172,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "331:476:8156"
+	      SID		      "331:476:8184"
 	      Ports		      [1, 1]
 	      Position		      [1000, 100, 1050, 120]
-	      ZOrder		      8108
+	      ZOrder		      8136
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -17204,10 +17204,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "jgowans_snapshot_no_fft_adc1_snap_ctrl_user_data_out"
-	      SID		      "331:476:8155"
+	      SID		      "331:476:8183"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      8107
+	      ZOrder		      8135
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway In"
 	      SourceType	      "Xilinx Gateway In Block"
@@ -17250,10 +17250,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "331:476:8161"
+	      SID		      "331:476:8189"
 	      Ports		      [1, 1]
 	      Position		      [1300, 100, 1350, 120]
-	      ZOrder		      8113
+	      ZOrder		      8141
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -17281,10 +17281,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "slice_reg"
-	      SID		      "331:476:8160"
+	      SID		      "331:476:8188"
 	      Ports		      [1, 1]
 	      Position		      [1100, 100, 1150, 120]
-	      ZOrder		      8112
+	      ZOrder		      8140
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
@@ -17649,7 +17649,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "7697"
+	    SIDHighWatermark	    "7717"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "out_reg"
@@ -17661,10 +17661,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "assert_reg"
-	      SID		      "331:515:7696"
+	      SID		      "331:515:7716"
 	      Ports		      [1, 1]
 	      Position		      [200, 100, 250, 120]
-	      ZOrder		      7648
+	      ZOrder		      7668
 	      ShowName		      off
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Assert"
@@ -17699,10 +17699,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "cast_gw"
-	      SID		      "331:515:7694"
+	      SID		      "331:515:7714"
 	      Ports		      [1, 1]
 	      Position		      [700, 100, 750, 120]
-	      ZOrder		      7646
+	      ZOrder		      7666
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Convert"
 	      SourceType	      "Xilinx Type Converter Block"
@@ -17738,10 +17738,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "331:515:7693"
+	      SID		      "331:515:7713"
 	      Ports		      [1, 1]
 	      Position		      [600, 100, 650, 120]
-	      ZOrder		      7645
+	      ZOrder		      7665
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -17770,10 +17770,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "jgowans_snapshot_no_fft_adc1_snap_status_user_data_in"
-	      SID		      "331:515:7695"
+	      SID		      "331:515:7715"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      7647
+	      ZOrder		      7667
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway Out"
 	      SourceType	      "Xilinx Gateway Out Block"
@@ -17805,10 +17805,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "331:515:7697"
+	      SID		      "331:515:7717"
 	      Ports		      [1, 1]
 	      Position		      [300, 100, 350, 120]
-	      ZOrder		      7649
+	      ZOrder		      7669
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -22254,7 +22254,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"8203"
+	SIDHighWatermark	"8245"
 	SIDPrevWatermark	"6530"
 	Block {
 	  BlockType		  Inport
@@ -22267,10 +22267,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "469:8199"
+	  SID			  "469:8241"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  8151
+	  ZOrder		  8193
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -22298,10 +22298,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "jgowans_snapshot_no_fft_trig_gate_user_data_out"
-	  SID			  "469:8198"
+	  SID			  "469:8240"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  8150
+	  ZOrder		  8192
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -22331,12 +22331,12 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
+	  sg_icon_stat		  "50,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 50 50 0 0 ],[0 0 20 20 0 ]);\npatch([20.55 23.44 25.44 27.44 29.44 25.44 22.55 20.55 ],[12.22 12.22 1"
+	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([22.55 25.44 23.44 20.55 22.55 ],[10.22 10.22 12.22 12.22 10"
+	  ".22 ],[0.985 0.979 0.895 ]);\npatch([20.55 23.44 25.44 22.55 20.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
+	  "h([22.55 29.44 27.44 25.44 23.44 20.55 22.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
 	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
 	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
 	  "on text');"
@@ -22344,10 +22344,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "469:8203"
+	  SID			  "469:8245"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  8155
+	  ZOrder		  8197
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -22365,14 +22365,14 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "slice"
-	  sg_icon_stat		  "60,30,1,1,white,blue,0,1fd851a7,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 30 30 0 ],[0.77 0.82 0.91"
-	  " ]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\npatch([21.1 26.88 30.88 34.88 38.88 30.88 25.1 21.1 ],[19.44 19.44 23.4"
-	  "4 19.44 23.44 23.44 23.44 19.44 ],[1 1 1 ]);\npatch([25.1 30.88 26.88 21.1 25.1 ],[15.44 15.44 19.44 19.44 15.44 ],"
-	  "[0.931 0.946 0.973 ]);\npatch([21.1 26.88 30.88 25.1 21.1 ],[11.44 11.44 15.44 15.44 11.44 ],[1 1 1 ]);\npatch([25."
-	  "1 38.88 34.88 30.88 26.88 21.1 25.1 ],[7.44 7.44 11.44 7.44 11.44 11.44 7.44 ],[0.931 0.946 0.973 ]);\nfprintf('','"
-	  "COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\ncolor('black');port_label('output',1,'[a:"
-	  "b]');\nfprintf('','COMMENT: end icon text');"
+	  sg_icon_stat		  "50,20,1,1,white,blue,0,1fd851a7,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 0 ],[0 0 20 20 0 ],[0.77 0.82 0.91"
+	  " ]);\nplot([0 50 50 0 0 ],[0 0 20 20 0 ]);\npatch([20.55 23.44 25.44 27.44 29.44 25.44 22.55 20.55 ],[12.22 12.22 1"
+	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([22.55 25.44 23.44 20.55 22.55 ],[10.22 10.22 12.22 12.22 10"
+	  ".22 ],[0.931 0.946 0.973 ]);\npatch([20.55 23.44 25.44 22.55 20.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
+	  "h([22.55 29.44 27.44 25.44 23.44 20.55 22.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.931 0.946 0.973 ]);\nfprint"
+	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\ncolor('black');port_label('output',"
+	  "1,'[a:b]');\nfprintf('','COMMENT: end icon text');"
 	}
 	Block {
 	  BlockType		  Outport
@@ -22575,7 +22575,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"8385"
+	SIDHighWatermark	"8434"
 	SIDPrevWatermark	"6530"
 	Block {
 	  BlockType		  Inport
@@ -22588,10 +22588,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "460:8380"
+	  SID			  "460:8429"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  8332
+	  ZOrder		  8381
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -22619,10 +22619,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "jgowans_snapshot_no_fft_trig_level_user_data_out"
-	  SID			  "460:8379"
+	  SID			  "460:8428"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  8331
+	  ZOrder		  8380
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -22652,12 +22652,12 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
+	  sg_icon_stat		  "50,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 50 50 0 0 ],[0 0 20 20 0 ]);\npatch([20.55 23.44 25.44 27.44 29.44 25.44 22.55 20.55 ],[12.22 12.22 1"
+	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([22.55 25.44 23.44 20.55 22.55 ],[10.22 10.22 12.22 12.22 10"
+	  ".22 ],[0.985 0.979 0.895 ]);\npatch([20.55 23.44 25.44 22.55 20.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
+	  "h([22.55 29.44 27.44 25.44 23.44 20.55 22.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
 	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
 	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
 	  "on text');"
@@ -22665,10 +22665,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "460:8385"
+	  SID			  "460:8434"
 	  Ports			  [1, 1]
 	  Position		  [1300, 100, 1350, 120]
-	  ZOrder		  8337
+	  ZOrder		  8386
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -22684,22 +22684,22 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "reinterpret"
-	  sg_icon_stat		  "50,32,1,1,white,blue,0,6b04d0b0,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 0 ],[0 0 32 32 0 ],[0.77 0.82 0.91"
-	  " ]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\npatch([16.1 21.88 25.88 29.88 33.88 25.88 20.1 16.1 ],[20.44 20.44 24.4"
-	  "4 20.44 24.44 24.44 24.44 20.44 ],[1 1 1 ]);\npatch([20.1 25.88 21.88 16.1 20.1 ],[16.44 16.44 20.44 20.44 16.44 ],"
-	  "[0.931 0.946 0.973 ]);\npatch([16.1 21.88 25.88 20.1 16.1 ],[12.44 12.44 16.44 16.44 12.44 ],[1 1 1 ]);\npatch([20."
-	  "1 33.88 29.88 25.88 21.88 16.1 20.1 ],[8.44 8.44 12.44 8.44 12.44 12.44 8.44 ],[0.931 0.946 0.973 ]);\nfprintf('','"
-	  "COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\n\ncolor('black');disp('reinterpret');\nfp"
-	  "rintf('','COMMENT: end icon text');"
+	  sg_icon_stat		  "50,20,1,1,white,blue,0,6b04d0b0,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 0 ],[0 0 20 20 0 ],[0.77 0.82 0.91"
+	  " ]);\nplot([0 50 50 0 0 ],[0 0 20 20 0 ]);\npatch([20.55 23.44 25.44 27.44 29.44 25.44 22.55 20.55 ],[12.22 12.22 1"
+	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([22.55 25.44 23.44 20.55 22.55 ],[10.22 10.22 12.22 12.22 10"
+	  ".22 ],[0.931 0.946 0.973 ]);\npatch([20.55 23.44 25.44 22.55 20.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
+	  "h([22.55 29.44 27.44 25.44 23.44 20.55 22.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.931 0.946 0.973 ]);\nfprint"
+	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\n\ncolor('black');disp('reinterpret'"
+	  ");\nfprintf('','COMMENT: end icon text');"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "460:8384"
+	  SID			  "460:8433"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  8336
+	  ZOrder		  8385
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -22717,14 +22717,14 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "slice"
-	  sg_icon_stat		  "60,30,1,1,white,blue,0,1fd851a7,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 30 30 0 ],[0.77 0.82 0.91"
-	  " ]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\npatch([21.1 26.88 30.88 34.88 38.88 30.88 25.1 21.1 ],[19.44 19.44 23.4"
-	  "4 19.44 23.44 23.44 23.44 19.44 ],[1 1 1 ]);\npatch([25.1 30.88 26.88 21.1 25.1 ],[15.44 15.44 19.44 19.44 15.44 ],"
-	  "[0.931 0.946 0.973 ]);\npatch([21.1 26.88 30.88 25.1 21.1 ],[11.44 11.44 15.44 15.44 11.44 ],[1 1 1 ]);\npatch([25."
-	  "1 38.88 34.88 30.88 26.88 21.1 25.1 ],[7.44 7.44 11.44 7.44 11.44 11.44 7.44 ],[0.931 0.946 0.973 ]);\nfprintf('','"
-	  "COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\ncolor('black');port_label('output',1,'[a:"
-	  "b]');\nfprintf('','COMMENT: end icon text');"
+	  sg_icon_stat		  "50,20,1,1,white,blue,0,1fd851a7,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 0 ],[0 0 20 20 0 ],[0.77 0.82 0.91"
+	  " ]);\nplot([0 50 50 0 0 ],[0 0 20 20 0 ]);\npatch([20.55 23.44 25.44 27.44 29.44 25.44 22.55 20.55 ],[12.22 12.22 1"
+	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([22.55 25.44 23.44 20.55 22.55 ],[10.22 10.22 12.22 12.22 10"
+	  ".22 ],[0.931 0.946 0.973 ]);\npatch([20.55 23.44 25.44 22.55 20.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
+	  "h([22.55 29.44 27.44 25.44 23.44 20.55 22.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.931 0.946 0.973 ]);\nfprint"
+	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\ncolor('black');port_label('output',"
+	  "1,'[a:b]');\nfprintf('','COMMENT: end icon text');"
 	}
 	Block {
 	  BlockType		  Outport
@@ -23226,7 +23226,7 @@ MatData {
     "+3$   X    P    !@    @    $          4    (     0    ,    !         !   P!O9F8 #@   #@    &    \"     0         !"
     "0    @    !    !@    $         $     8   !F9C$Q,S8   X   !0    !@    @    $          4    (     0   \"     !      "
     "   !     @    +B]J9V]W86YS7W-N87!S:&]T7VYO7V9F=\"]S>7-G96X.    ,     8    (    !          %    \"     $    !     0"
-    "         0  $ -0    X   !     !@    @    $          4    (     0    T    !         !     -    0VQO8VL@16YA8FQE<P  "
+    "         0  $ -     X   !     !@    @    $          4    (     0    T    !         !     -    0VQO8VL@16YA8FQE<P  "
     "  X    P    !@    @    $          4    (     0    ,    !         !   P Q,#  #@   #     &    \"     0         !0   "
     " @    !     P    $         $  # &]F9@ .    2     8    (    !          %    \"     $    1     0         0    $0   %"
     "!R;VIE8W0@3F%V:6=A=&]R          X   !     !@    @    $          4    (     0    T    !         !     -    6%-4($1E"
