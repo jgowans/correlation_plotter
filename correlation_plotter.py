@@ -20,7 +20,8 @@ results_directory = os.getenv('HOME') + "/correlation_plotter_results/"
 SNAPSHOT_BLOCK_SIZE = 131072
 SAMPLE_FREQUENCY = 800.0e6
 RESAMPLE_FACTOR = 5
-ANTENNA_SPACING_METRES = 5.0
+#ANTENNA_SPACING_METRES = 4.32 #this is the beam length
+ANTENNA_SPACING_METRES = 10.3
 
 
 def plot_initial_signals(signal0, signal1):
@@ -47,12 +48,12 @@ def plot_initial_signals(signal0, signal1):
     ax_signal0.plot(signal_axis, signal0)
     ax_fft_signal0.plot(fft_axis, numpy.abs(fft_signal0))
     ax_fft_signal0_phase.plot(fft_axis, numpy.angle(fft_signal0))
-    ax_signal1.plot(signal_axis, signal1)
+    ax_signal1.plot(signal_axis, signal1) 
     ax_fft_signal1.plot(fft_axis, numpy.abs(fft_signal1))
     ax_fft_signal1_phase.plot(fft_axis, numpy.angle(fft_signal1))
     mng = plt.get_current_fig_manager()
     mng.resize(*mng.window.maxsize())
-    fig.show()
+    plt.show()
 
 def get_triggered_snapshot():
     # arm the snapshot blocks
@@ -73,6 +74,10 @@ def get_triggered_snapshot():
     logging.info("captured. unpacking data")
     signal0 = struct.unpack(str(SNAPSHOT_BLOCK_SIZE ) + "b", (adc0_data))
     signal1 = struct.unpack(str(SNAPSHOT_BLOCK_SIZE ) + "b", (adc1_data))
+    b,a = scipy.signal.butter(10, 37.0e6/(800.0e6/2), btype="highpass") 
+    signal0 = scipy.signal.filtfilt(b,a,signal0)
+    signal1 = scipy.signal.filtfilt(b,a,signal1)
+
     # remove ADC offset
     plot_initial_signals(signal0, signal1)
     #now plot the signals
@@ -104,6 +109,18 @@ def plot_correlation_and_get_angle(signal0, signal1):
     # get the correlation of the upsampled signals
     correlation = numpy.correlate(upsampled_sub_signal0, upsampled_sub_signal1, "full")
 
+    index_of_max_value = correlation.argmax()
+    samples_delay = len(upsampled_sub_signal0) - index_of_max_value - 1
+    shifted_start_time = ((start_sample-(samples_delay/5.0))/SAMPLE_FREQUENCY) * 1e6
+    shifted_end_time = ((end_sample-(samples_delay/5.0))/SAMPLE_FREQUENCY)*1e6
+    upsampled_sub_signal_axis_shifted = numpy.linspace(shifted_start_time, shifted_end_time, len(upsampled_sub_signal1), endpoint=False)
+    print "antenna 2 is delayed from antenna 1 by " + str(samples_delay) + " samples"
+    time_delay = (1.0/(SAMPLE_FREQUENCY * RESAMPLE_FACTOR)) * samples_delay
+    delay_max = ANTENNA_SPACING_METRES / scipy.constants.c
+    print "delay max: " + str(delay_max) + "  time_delay: " + str(time_delay)
+    angle = round(numpy.degrees(numpy.arccos(time_delay / delay_max)), 2)
+    print "angle of arrival: " + str(angle) + " degrees"
+
     #create the axes
     # create and link the axes
     fig = plt.figure()
@@ -111,7 +128,8 @@ def plot_correlation_and_get_angle(signal0, signal1):
     ax_fft_signal0 = fig.add_subplot(323)
     ax_signal1 = fig.add_subplot(322, sharex=ax_signal0, sharey=ax_signal0)
     ax_fft_signal1 = fig.add_subplot(324, sharex=ax_fft_signal0, sharey=ax_fft_signal0)
-    ax_correlation = fig.add_subplot(313)
+    ax_correlation = fig.add_subplot(325)
+    ax_signals_on_top_of_each_other = fig.add_subplot(326)
     # lable the axes
     # add the plots
     ax_signal0.plot(upsampled_sub_signal_axis, upsampled_sub_signal0)
@@ -119,19 +137,13 @@ def plot_correlation_and_get_angle(signal0, signal1):
     ax_signal1.plot(upsampled_sub_signal_axis, upsampled_sub_signal1)
     ax_fft_signal1.plot(fft_sub_signal_axis, numpy.abs(fft_sub_signal1))
     ax_correlation.plot(correlation)
+    ax_signals_on_top_of_each_other.plot(upsampled_sub_signal_axis, upsampled_sub_signal0)
+    ax_signals_on_top_of_each_other.plot(upsampled_sub_signal_axis_shifted, upsampled_sub_signal1, "r")
     mng = plt.get_current_fig_manager()
     mng.resize(*mng.window.maxsize())
     fig.show()
     plt.savefig("/tmp/pyplot_dump.png")
 
-    index_of_max_value = correlation.argmax()
-    samples_delay = len(upsampled_sub_signal0) - index_of_max_value - 1
-    print "antenna 2 is delayed from antenna 1 by " + str(samples_delay) + " samples"
-    time_delay = (1.0/(SAMPLE_FREQUENCY * RESAMPLE_FACTOR)) * samples_delay
-    delay_max = ANTENNA_SPACING_METRES / scipy.constants.c
-    print "delay max: " + str(delay_max) + "  time_delay: " + str(time_delay)
-    angle = round(numpy.degrees(numpy.arccos(time_delay / delay_max)), 2)
-    print "angle of arrival: " + str(angle) + " degrees"
     return angle
 
 def log_to_file(signal0, signal1, angle):
@@ -165,19 +177,21 @@ global_config = json.load(open(config_file))
 
 # connect to FPGA and program
 logging.info("starting programming and configuring")
-fpga = corr.katcp_wrapper.FpgaClient("localhost", 7147)
+fpga = corr.katcp_wrapper.FpgaClient("192.168.14.30", 7147)
 time.sleep(1)
 fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_09_1825.bof")
 fpga.write_int("trig_level", 0)
 signal0, signal1 = get_triggered_snapshot()
-fpga.write_int("trig_level", 10)
+fpga.write_int("trig_level", 35)
 time.sleep(1)
 raw_input("Ready to continue when you are... ")
 
 while True:
     signal0, signal1 = get_triggered_snapshot()
+    print("and the amplitude was: {:d}".format(int(max(signal0))))
     timestamp = time.strftime("%y-%m-%d-%H-%M-%S")
     user_response = raw_input("Use this signal [y], ignore it [n], or adjust the trigger level [a]:  ")
+    #user_response =  'n'
     if user_response == "a":
         print "Trigger is currently {:d}".format(fpga.read_int("trig_level"))
         new_trigger = int(raw_input("What value should the trigger be?:  "))
@@ -187,5 +201,4 @@ while True:
         user_response = raw_input("Should this vecor be logged to file? [y/n]  ")
         if user_response == "y":
             log_to_file(signal0, signal1, angle) #this should also log the PNG!
-    plt.close("all")
-
+    plt.close('all')
