@@ -7,7 +7,7 @@ import scipy.signal
 import sys
 
 PREFIX = sys.argv[1]
-DUMP_DIR = "/home/jgowans/Documents/other_plots/day_2_results/adc_dumps/"
+DUMP_DIR = "/home/jgowans/correlation_plotter_results/adc_dumps/"
 
 with open(DUMP_DIR + PREFIX + "-signal0") as f:
     sig0_raw = f.read()

@@ -18,10 +18,10 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s:" + logging.BASIC_FO
 config_file = os.getenv('HOME') + "/correlation_plotter_config"
 results_directory = os.getenv('HOME') + "/correlation_plotter_results/"
 SNAPSHOT_BLOCK_SIZE = 131072
-SAMPLE_FREQUENCY = 800.0e6
-RESAMPLE_FACTOR = 5
+SAMPLE_FREQUENCY = 900.0e6
+RESAMPLE_FACTOR = 5.0
 #ANTENNA_SPACING_METRES = 4.32 #this is the beam length
-ANTENNA_SPACING_METRES = 10.3
+ANTENNA_SPACING_METRES = 3.53
 
 
 def plot_initial_signals(signal0, signal1):
@@ -75,8 +75,8 @@ def get_triggered_snapshot():
     signal0 = struct.unpack(str(SNAPSHOT_BLOCK_SIZE ) + "b", (adc0_data))
     signal1 = struct.unpack(str(SNAPSHOT_BLOCK_SIZE ) + "b", (adc1_data))
     b,a = scipy.signal.butter(10, 37.0e6/(800.0e6/2), btype="highpass") 
-    signal0 = scipy.signal.filtfilt(b,a,signal0)
-    signal1 = scipy.signal.filtfilt(b,a,signal1)
+    #signal0 = scipy.signal.filtfilt(b,a,signal0)
+    #signal1 = scipy.signal.filtfilt(b,a,signal1)
 
     # remove ADC offset
     plot_initial_signals(signal0, signal1)
@@ -179,10 +179,10 @@ global_config = json.load(open(config_file))
 logging.info("starting programming and configuring")
 fpga = corr.katcp_wrapper.FpgaClient("192.168.14.30", 7147)
 time.sleep(1)
-fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_09_1825.bof")
-fpga.write_int("trig_level", 0)
+fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_16_0748.bof")
+fpga.write_int("trig_level", 1)
 signal0, signal1 = get_triggered_snapshot()
-fpga.write_int("trig_level", 35)
+fpga.write_int("trig_level", 10)
 time.sleep(1)
 raw_input("Ready to continue when you are... ")
 
