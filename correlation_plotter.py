@@ -177,9 +177,10 @@ global_config = json.load(open(config_file))
 
 # connect to FPGA and program
 logging.info("starting programming and configuring")
-fpga = corr.katcp_wrapper.FpgaClient("192.168.14.30", 7147)
+fpga = corr.katcp_wrapper.FpgaClient("localhost", 7147)
 time.sleep(1)
-fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_16_0748.bof")
+fpga.progdev("jgowans_snapshot_no_fft_2014_Apr_17_1307.bof")
+#fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_16_0748.bof")
 fpga.write_int("trig_level", 1)
 signal0, signal1 = get_triggered_snapshot()
 fpga.write_int("trig_level", 10)
