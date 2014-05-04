@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.298"
+    ComputedModelVersion    "1.309"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -54,9 +54,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1884.0, 997.0]
+	Extents			[1884.0, 996.0]
 	ZoomFactor		[1.5]
-	Offset			[461.36435924001051, 154.66441674711766]
+	Offset			[605.27002208241674, 296.29388911333393]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jgowans"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 03 17:18:30 2014"
-  RTWModifiedTimeStamp	  320248050
-  ModelVersionFormat	  "1.%<AutoIncrement:298>"
+  LastModifiedDate	  "Sun May 04 15:04:22 2014"
+  RTWModifiedTimeStamp	  321109730
+  ModelVersionFormat	  "1.%<AutoIncrement:309>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -877,7 +877,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "929"
+    SIDHighWatermark	    "935"
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -1598,7 +1598,7 @@ Model {
       num_inputs	      "6"
       dbl_ovrd		      off
       has_advanced_control    "0"
-      sggui_pos		      "1291,19,368,221"
+      sggui_pos		      "1282,19,368,221"
       block_type	      "concat"
       sg_icon_stat	      "70,182,6,1,white,blue,0,c44eeefa,right,,[ ],[ ]"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 70 70 0 0 ],[0 0 182 182 0 ],[0.77 "
@@ -1807,7 +1807,7 @@ Model {
       BlockType		      From
       Name		      "From2"
       SID		      "327"
-      Position		      [840, 346, 900, 364]
+      Position		      [805, 346, 865, 364]
       ZOrder		      5473
       GotoTag		      "adc0"
     }
@@ -2650,15 +2650,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2696,15 +2696,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2742,15 +2742,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2788,15 +2788,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2834,15 +2834,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2880,15 +2880,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2926,15 +2926,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2972,15 +2972,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3018,15 +3018,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3064,15 +3064,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3110,15 +3110,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3156,15 +3156,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3202,15 +3202,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3248,15 +3248,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3294,15 +3294,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3340,15 +3340,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3386,15 +3386,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "gatewayin"
-	  sg_icon_stat		  "65,20,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 20 20 0 ],[0.95 0.93 0.65"
-	  " ]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\npatch([27.55 30.44 32.44 34.44 36.44 32.44 29.55 27.55 ],[12.22 12.22 1"
-	  "4.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([29.55 32.44 30.44 27.55 29.55 ],[10.22 10.22 12.22 12.22 10"
-	  ".22 ],[0.985 0.979 0.895 ]);\npatch([27.55 30.44 32.44 29.55 27.55 ],[8.22 8.22 10.22 10.22 8.22 ],[1 1 1 ]);\npatc"
-	  "h([29.55 36.44 34.44 32.44 30.44 27.55 29.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.979 0.895 ]);\nfprint"
-	  "f('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'"
-	  "\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end ic"
-	  "on text');"
+	  sg_icon_stat		  "80,16,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 0 ],[0 0 16 16 0 ],[0.95 0.93 0.65"
+	  " ]);\nplot([0 80 80 0 0 ],[0 0 16 16 0 ]);\npatch([35.55 38.44 40.44 42.44 44.44 40.44 37.55 35.55 ],[10.22 10.22 1"
+	  "2.22 10.22 12.22 12.22 12.22 10.22 ],[1 1 1 ]);\npatch([37.55 40.44 38.44 35.55 37.55 ],[8.22 8.22 10.22 10.22 8.22"
+	  " ],[0.985 0.979 0.895 ]);\npatch([35.55 38.44 40.44 37.55 35.55 ],[6.22 6.22 8.22 8.22 6.22 ],[1 1 1 ]);\npatch([37"
+	  ".55 44.44 42.44 40.44 38.44 35.55 37.55 ],[4.22 4.22 6.22 4.22 6.22 6.22 4.22 ],[0.985 0.979 0.895 ]);\nfprintf('',"
+	  "'COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fon"
+	  "tsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon te"
+	  "xt');"
 	}
 	Block {
 	  BlockType		  Outport
@@ -5387,7 +5387,7 @@ Model {
       Name		      "delay_bram"
       SID		      "651"
       Ports		      [1, 1]
-      Position		      [960, 335, 1000, 375]
+      Position		      [935, 335, 975, 375]
       ZOrder		      5558
       BackgroundColor	      "[0.501961, 0.501961, 0.501961]"
       AncestorBlock	      "casper_library_delays/delay_bram"
@@ -5419,14 +5419,14 @@ Model {
 	    Type		    "edit"
 	    Name		    "DelayLen"
 	    Prompt		    "Delay By:"
-	    Value		    "2^15"
+	    Value		    "2^14"
 	  }
 	  Object {
 	    $ObjectID		    41
 	    Type		    "edit"
 	    Name		    "bram_latency"
 	    Prompt		    "BRAM Latency"
-	    Value		    "128"
+	    Value		    "3"
 	  }
 	  Object {
 	    $ObjectID		    42
@@ -5530,7 +5530,7 @@ Model {
 	  start_count		  "0"
 	  cnt_by_val		  "1"
 	  arith_type		  "Unsigned"
-	  n_bits		  "15"
+	  n_bits		  "14"
 	  bin_pt		  "0"
 	  load_pin		  off
 	  rst			  off
@@ -5565,7 +5565,7 @@ Model {
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Single Port RAM"
 	  SourceType		  "Xilinx Single Port Random Access Memory Block"
-	  depth			  "32768"
+	  depth			  "16384"
 	  initVector		  "0"
 	  distributed_mem	  "Block RAM"
 	  write_mode		  "Read Before Write"
@@ -5580,7 +5580,7 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "1291,19,492,397"
 	  block_type		  "spram"
-	  sg_icon_stat		  "65,116,3,1,white,blue,0,bb82d166,right,,[ ],[ ]"
+	  sg_icon_stat		  "65,116,3,1,white,blue,0,0b4315b4,right,,[ ],[ ]"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 0 ],[0 0 116 116 0 ],[0.77 0.82 0."
 	  "91 ]);\nplot([0 65 65 0 0 ],[0 0 116 116 0 ]);\npatch([11.975 24.98 33.98 42.98 51.98 33.98 20.975 11.975 ],[67.99 "
 	  "67.99 76.99 67.99 76.99 76.99 76.99 67.99 ],[1 1 1 ]);\npatch([20.975 33.98 24.98 11.975 20.975 ],[58.99 58.99 67.9"
@@ -5588,7 +5588,7 @@ Model {
 	  "[1 1 1 ]);\npatch([20.975 51.98 42.98 33.98 24.98 11.975 20.975 ],[40.99 40.99 49.99 40.99 49.99 49.99 40.99 ],[0.9"
 	  "31 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('blac"
 	  "k');port_label('input',1,'addr');\ncolor('black');port_label('input',2,'data');\ncolor('black');port_label('input',"
-	  "3,'we');\n\ncolor('black');disp('z^{-128}','texmode','on');\nfprintf('','COMMENT: end icon text');"
+	  "3,'we');\n\ncolor('black');disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');"
 	}
 	Block {
 	  BlockType		  Outport
@@ -5879,7 +5879,7 @@ Model {
 		Type			"edit"
 		Name			"counter_size"
 		Prompt			"Address counter size (2^?)"
-		Value			"22+4+1"
+		Value			"23+4+1"
 	      }
 	      Object {
 		$ObjectID		56
@@ -5893,7 +5893,7 @@ Model {
 		Type			"edit"
 		Name			"nsamples"
 		Prompt			"Number of samples (2^?)"
-		Value			"22"
+		Value			"23"
 	      }
 	      Object {
 		$ObjectID		58
@@ -6664,14 +6664,15 @@ Model {
 	      sggui_pos		      "595,360,419,444"
 	      block_type	      "shift"
 	      block_version	      "11.4"
-	      sg_icon_stat	      "50,20,1,1,white,blue,0,ee006060,right,,[ ],[ ]"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 56 56 0 ],[0.77 0"
-	      ".82 0.91 ]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\npatch([12.2 23.76 31.76 39.76 47.76 31.76 20.2 12.2 ],[36.8"
-	      "8 36.88 44.88 36.88 44.88 44.88 44.88 36.88 ],[1 1 1 ]);\npatch([20.2 31.76 23.76 12.2 20.2 ],[28.88 28.88 36.8"
-	      "8 36.88 28.88 ],[0.931 0.946 0.973 ]);\npatch([12.2 23.76 31.76 20.2 12.2 ],[20.88 20.88 28.88 28.88 20.88 ],[1"
-	      " 1 1 ]);\npatch([20.2 47.76 39.76 31.76 23.76 12.2 20.2 ],[12.88 12.88 20.88 12.88 20.88 20.88 12.88 ],[0.931 0"
-	      ".946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\n\ncolor('"
-	      "black');disp('\\bf{X << 2}','texmode','on');\nfprintf('','COMMENT: end icon text');"
+	      sg_icon_stat	      "50,20,1,1,white,blue,0,b99b48dd,right,,[ ],[ ]"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 0 ],[0 0 20 20 0 ],[0.77 0"
+	      ".82 0.91 ]);\nplot([0 50 50 0 0 ],[0 0 20 20 0 ]);\npatch([20.55 23.44 25.44 27.44 29.44 25.44 22.55 20.55 ],[1"
+	      "2.22 12.22 14.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([22.55 25.44 23.44 20.55 22.55 ],[10.22 10.2"
+	      "2 12.22 12.22 10.22 ],[0.931 0.946 0.973 ]);\npatch([20.55 23.44 25.44 22.55 20.55 ],[8.22 8.22 10.22 10.22 8.2"
+	      "2 ],[1 1 1 ]);\npatch([22.55 29.44 27.44 25.44 23.44 20.55 22.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.931"
+	      " 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\n\ncolor"
+	      "('black');disp('z^{-1}\\newline ','texmode','on');\ncolor('black');disp(' \\newline\\bf{X << 3}','texmode','on'"
+	      ");\nfprintf('','COMMENT: end icon text');"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -7563,7 +7564,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "174"
+	    ZoomFactor		    "173"
 	    SIDHighWatermark	    "1003"
 	    SIDPrevWatermark	    "1003"
 	    Block {
@@ -9143,12 +9144,12 @@ Model {
 		  sggui_pos		  "22,98,419,748"
 		  block_type		  "counter"
 		  block_version		  "11.4"
-		  sg_icon_stat		  "40,49,2,1,white,blue,0,ae3608d6,right,,[ ],[ ]"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 0 ],[0 0 49 49 0 ],[0.77 0.82 0.9"
-		  "1 ]);\nplot([0 40 40 0 0 ],[0 0 49 49 0 ]);\npatch([8.875 16.1 21.1 26.1 31.1 21.1 13.875 8.875 ],[29.55 29.55 34."
-		  "55 29.55 34.55 34.55 34.55 29.55 ],[1 1 1 ]);\npatch([13.875 21.1 16.1 8.875 13.875 ],[24.55 24.55 29.55 29.55 24."
-		  "55 ],[0.931 0.946 0.973 ]);\npatch([8.875 16.1 21.1 13.875 8.875 ],[19.55 19.55 24.55 24.55 19.55 ],[1 1 1 ]);\npa"
-		  "tch([13.875 31.1 26.1 21.1 16.1 8.875 13.875 ],[14.55 14.55 19.55 14.55 19.55 19.55 14.55 ],[0.931 0.946 0.973 ]);"
+		  sg_icon_stat		  "40,51,2,1,white,blue,0,ae3608d6,right,,[ ],[ ]"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 0 ],[0 0 51 51 0 ],[0.77 0.82 0.9"
+		  "1 ]);\nplot([0 40 40 0 0 ],[0 0 51 51 0 ]);\npatch([8.875 16.1 21.1 26.1 31.1 21.1 13.875 8.875 ],[30.55 30.55 35."
+		  "55 30.55 35.55 35.55 35.55 30.55 ],[1 1 1 ]);\npatch([13.875 21.1 16.1 8.875 13.875 ],[25.55 25.55 30.55 30.55 25."
+		  "55 ],[0.931 0.946 0.973 ]);\npatch([8.875 16.1 21.1 13.875 8.875 ],[20.55 20.55 25.55 25.55 20.55 ],[1 1 1 ]);\npa"
+		  "tch([13.875 31.1 26.1 21.1 16.1 8.875 13.875 ],[15.55 15.55 20.55 15.55 20.55 20.55 15.55 ],[0.931 0.946 0.973 ]);"
 		  "\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\n\ncolor('black');disp('{\\fo"
 		  "ntsize{14}\\bf++}','texmode','on');\nfprintf('','COMMENT: end icon text');"
 		}
@@ -10190,7 +10191,7 @@ Model {
 	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "680,183,589,659"
+	  sggui_pos		  "680,167,589,659"
 	  block_type		  "convert"
 	  block_version		  "11.4"
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,edca21da,right,,[ ],[ ]"
@@ -10374,7 +10375,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "10156"
+	    SIDHighWatermark	    "10478"
 	    SIDPrevWatermark	    "6530"
 	    Block {
 	      BlockType		      Inport
@@ -10387,10 +10388,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "324:476:10151"
+	      SID		      "324:476:10473"
 	      Ports		      [1, 1]
 	      Position		      [1000, 100, 1050, 120]
-	      ZOrder		      10103
+	      ZOrder		      10425
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -10419,10 +10420,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "jgowans_rfi_capture_5g_dram_snap_ctrl_user_data_out"
-	      SID		      "324:476:10150"
+	      SID		      "324:476:10472"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      10102
+	      ZOrder		      10424
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway In"
 	      SourceType	      "Xilinx Gateway In Block"
@@ -10465,10 +10466,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "324:476:10156"
+	      SID		      "324:476:10478"
 	      Ports		      [1, 1]
 	      Position		      [1300, 100, 1350, 120]
-	      ZOrder		      10108
+	      ZOrder		      10430
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -10496,10 +10497,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "slice_reg"
-	      SID		      "324:476:10155"
+	      SID		      "324:476:10477"
 	      Ports		      [1, 1]
 	      Position		      [1100, 100, 1150, 120]
-	      ZOrder		      10107
+	      ZOrder		      10429
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
@@ -10733,7 +10734,7 @@ Model {
 	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "1282,19,416,401"
+	  sggui_pos		  "1273,19,416,401"
 	  block_type		  "reinterpret"
 	  block_version		  "11.4"
 	  sg_icon_stat		  "60,16,1,1,white,blue,0,6b04d0b0,right,,[ ],[ ]"
@@ -10950,7 +10951,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "9122"
+	    SIDHighWatermark	    "9352"
 	    SIDPrevWatermark	    "6530"
 	    Block {
 	      BlockType		      Inport
@@ -10963,10 +10964,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "assert_reg"
-	      SID		      "324:515:9121"
+	      SID		      "324:515:9351"
 	      Ports		      [1, 1]
 	      Position		      [200, 100, 250, 120]
-	      ZOrder		      9073
+	      ZOrder		      9303
 	      ShowName		      off
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Assert"
@@ -11001,10 +11002,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "cast_gw"
-	      SID		      "324:515:9119"
+	      SID		      "324:515:9349"
 	      Ports		      [1, 1]
 	      Position		      [700, 100, 750, 120]
-	      ZOrder		      9071
+	      ZOrder		      9301
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Convert"
 	      SourceType	      "Xilinx Type Converter Block"
@@ -11040,10 +11041,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "324:515:9118"
+	      SID		      "324:515:9348"
 	      Ports		      [1, 1]
 	      Position		      [600, 100, 650, 120]
-	      ZOrder		      9070
+	      ZOrder		      9300
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -11072,10 +11073,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "jgowans_rfi_capture_5g_dram_snap_status_user_data_in"
-	      SID		      "324:515:9120"
+	      SID		      "324:515:9350"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      9072
+	      ZOrder		      9302
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway Out"
 	      SourceType	      "Xilinx Gateway Out Block"
@@ -11107,10 +11108,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "324:515:9122"
+	      SID		      "324:515:9352"
 	      Ports		      [1, 1]
 	      Position		      [300, 100, 350, 120]
-	      ZOrder		      9074
+	      ZOrder		      9304
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -12083,7 +12084,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"7380"
+	SIDHighWatermark	"7615"
 	SIDPrevWatermark	"6795"
 	Block {
 	  BlockType		  Inport
@@ -12096,10 +12097,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "assert_reg"
-	  SID			  "761:7379"
+	  SID			  "761:7614"
 	  Ports			  [1, 1]
 	  Position		  [200, 100, 250, 120]
-	  ZOrder		  7331
+	  ZOrder		  7566
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
@@ -12134,10 +12135,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "cast_gw"
-	  SID			  "761:7377"
+	  SID			  "761:7612"
 	  Ports			  [1, 1]
 	  Position		  [700, 100, 750, 120]
-	  ZOrder		  7329
+	  ZOrder		  7564
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Convert"
 	  SourceType		  "Xilinx Type Converter Block"
@@ -12172,10 +12173,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "761:7376"
+	  SID			  "761:7611"
 	  Ports			  [1, 1]
 	  Position		  [600, 100, 650, 120]
-	  ZOrder		  7328
+	  ZOrder		  7563
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -12203,10 +12204,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "jgowans_rfi_capture_5g_pulse_length_user_data_in"
-	  SID			  "761:7378"
+	  SID			  "761:7613"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  7330
+	  ZOrder		  7565
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway Out"
 	  SourceType		  "Xilinx Gateway Out Block"
@@ -12238,10 +12239,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "761:7380"
+	  SID			  "761:7615"
 	  Ports			  [1, 1]
 	  Position		  [300, 100, 350, 120]
-	  ZOrder		  7332
+	  ZOrder		  7567
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -12478,7 +12479,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"9871"
+	SIDHighWatermark	"10153"
 	SIDPrevWatermark	"6530"
 	Block {
 	  BlockType		  Inport
@@ -12491,10 +12492,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "469:9867"
+	  SID			  "469:10149"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  9819
+	  ZOrder		  10101
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -12522,10 +12523,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "jgowans_rfi_capture_5g_trig_arm_user_data_out"
-	  SID			  "469:9866"
+	  SID			  "469:10148"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  9818
+	  ZOrder		  10100
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -12568,10 +12569,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "469:9871"
+	  SID			  "469:10153"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  9823
+	  ZOrder		  10105
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -12799,7 +12800,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"10331"
+	SIDHighWatermark	"10660"
 	SIDPrevWatermark	"6530"
 	Block {
 	  BlockType		  Inport
@@ -12812,10 +12813,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "460:10326"
+	  SID			  "460:10655"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  10278
+	  ZOrder		  10607
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -12843,10 +12844,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "jgowans_rfi_capture_5g_trig_level_user_data_out"
-	  SID			  "460:10325"
+	  SID			  "460:10654"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  10277
+	  ZOrder		  10606
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -12889,10 +12890,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "460:10331"
+	  SID			  "460:10660"
 	  Ports			  [1, 1]
 	  Position		  [1300, 100, 1350, 120]
-	  ZOrder		  10283
+	  ZOrder		  10612
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -12920,10 +12921,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "460:10330"
+	  SID			  "460:10659"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  10282
+	  ZOrder		  10611
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -13019,7 +13020,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"174"
 	Block {
 	  BlockType		  Inport
 	  Name			  "ADC_data"
@@ -13075,7 +13076,7 @@ Model {
 	  carry			  "CIN"
 	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
-	  sggui_pos		  "1273,19,418,478"
+	  sggui_pos		  "1271,19,418,478"
 	  block_type		  "constant"
 	  sg_icon_stat		  "60,26,0,1,white,blue,0,8915407a,right,,[ ],[ ]"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 26 26 0 ],[0.77 0.82 0.91"
@@ -18906,7 +18907,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"7350"
+	SIDHighWatermark	"7585"
 	SIDPrevWatermark	"6795"
 	Block {
 	  BlockType		  Inport
@@ -18919,10 +18920,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "assert_reg"
-	  SID			  "751:7349"
+	  SID			  "751:7584"
 	  Ports			  [1, 1]
 	  Position		  [200, 100, 250, 120]
-	  ZOrder		  7301
+	  ZOrder		  7536
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
@@ -18957,10 +18958,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "cast_gw"
-	  SID			  "751:7347"
+	  SID			  "751:7582"
 	  Ports			  [1, 1]
 	  Position		  [700, 100, 750, 120]
-	  ZOrder		  7299
+	  ZOrder		  7534
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Convert"
 	  SourceType		  "Xilinx Type Converter Block"
@@ -18995,10 +18996,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "751:7346"
+	  SID			  "751:7581"
 	  Ports			  [1, 1]
 	  Position		  [600, 100, 650, 120]
-	  ZOrder		  7298
+	  ZOrder		  7533
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -19026,10 +19027,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "jgowans_rfi_capture_5g_triggered_user_data_in"
-	  SID			  "751:7348"
+	  SID			  "751:7583"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  7300
+	  ZOrder		  7535
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway Out"
 	  SourceType		  "Xilinx Gateway Out Block"
@@ -19061,10 +19062,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "751:7350"
+	  SID			  "751:7585"
 	  Ports			  [1, 1]
 	  Position		  [300, 100, 350, 120]
-	  ZOrder		  7302
+	  ZOrder		  7537
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -19142,12 +19143,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From2"
-      SrcPort		      1
-      DstBlock		      "delay_bram"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
       DstBlock		      "trig_level"
@@ -19157,13 +19152,6 @@ Model {
       SrcBlock		      "Constant1"
       SrcPort		      1
       DstBlock		      "trig_arm"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Concat1"
-      SrcPort		      1
-      Points		      [32, 0; 0, 85]
-      DstBlock		      "dram_snap"
       DstPort		      1
     }
     Line {
@@ -19282,12 +19270,6 @@ Model {
       SrcPort		      4
       DstBlock		      "Concat1"
       DstPort		      6
-    }
-    Line {
-      SrcBlock		      "delay_bram"
-      SrcPort		      1
-      DstBlock		      "bus_expand"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "asiaa_adc5g"
@@ -19603,6 +19585,30 @@ Model {
       SrcPort		      17
       DstBlock		      "Terminator"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Concat1"
+      SrcPort		      1
+      Points		      [76, 0; 0, 85]
+      DstBlock		      "dram_snap"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From2"
+      SrcPort		      1
+      DstBlock		      "delay_bram"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "delay_bram"
+      SrcPort		      1
+      DstBlock		      "bus_expand"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "935"
+      Name		      "Things to fix after updating mask:\ncast block to 144 bits\n\"dram\" unticked"
+      Position		      [1617, 510]
     }
     Annotation {
       SID		      "929"
@@ -20010,7 +20016,7 @@ MatData {
   DataRecord {
     Tag			    DataTag20
     Data		    "  %)30     .    , 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ $<-;@0.    H ,   "
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ -. *@(.    H ,   "
     "8    (     @         %    \"     $    !     0         %  0 #0    $   !!    9&5F875L=',      $1E;&%Y3&5N      !B<F%"
     "M7VQA=&5N8WD =7-E7V1S<#0X     &%S>6YC                    #@   \"@\"   &    \"     $         !0    @    !    \"    "
     " $         #@   #@    &    \"     0         !0    @    !    \"     $         $     @   !$96QA>4QE;@X    X    !@   "
@@ -20019,15 +20025,15 @@ MatData {
     "    )    \"             ! #@   $     &    \"     0         !0    @    !    \"0    $         $     D   !U<V5?9'-P-#"
     "@         #@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .    .     8    (    !      "
     "    %    \"     $    %     0         0    !0   &%S>6YC    #@   #     &    \"     0         !0    @    !     P    $"
-    "         $  # &]F9@ .    .     8    (    !@         %    \"     $    !     0         )    \"            .! #@   #@"
-    "    &    \"     8         !0    @    !     0    $         \"0    @           !@0 X    P    !@    @    $          4"
+    "         $  # &]F9@ .    .     8    (    !@         %    \"     $    !     0         )    \"            -! #@   #@"
+    "    &    \"     8         !0    @    !     0    $         \"0    @            (0 X    P    !@    @    $          4"
     "    (     0    ,    !         !   P!O9F8 #@   #     &    \"     0         !0    @    !     P    $         $  # &]F"
     "9@ "
   }
   DataRecord {
     Tag			    DataTag21
     Data		    "  %)30     .    R <   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ '4.; <.    . <   "
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !1O3  .    . <   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $   !N    9&5F875L=',   !S=&]R86=E     &1R86U?9&"
     "EM;0  9')A;5]C;&]C:P!N<V%M<&QE<P   &1A=&%?=VED=&@ ;V9F<V5T      !C:7)C87       '9A;'5E        =7-E7V1S<#0X      X "
     "  \"(!   !@    @    !          4    (     0   !(    !          X    X    !@    @    $          4    (     0    <  "
@@ -20046,7 +20052,7 @@ MatData {
     "-#@         #@   #     &    \"     0         !0    @    !     @    $         $  \" &]N   .    ,     8    (    !   "
     "       %    \"     $    $     0         0  0 9')A;0X    P    !@    @    $          4    (     0    $    !         "
     "!   0 Q    #@   #     &    \"     0         !0    @    !     P    $         $  # #(V-@ .    .     8    (    !@    "
-    "     %    \"     $    !     0         )    \"            #= #@   #     &    \"     0         !0    @    !     @   "
+    "     %    \"     $    !     0         )    \"            #A #@   #     &    \"     0         !0    @    !     @   "
     " $         $  \" #8T   .    ,     8    (    !          %    \"     $    #     0         0  , ;V9F  X    P    !@   "
     " @    $          4    (     0    ,    !         !   P!O9F8 #@   #     &    \"     0         !0    @    !     P    "
     "$         $  # &]F9@ .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
