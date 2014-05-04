@@ -7,12 +7,12 @@ import corr
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s:" + logging.BASIC_FORMAT)
 results_directory = os.getenv('HOME') + "/rfi_capture_results/"
-SNAPSHOT_BLOCK_SIZE =4*4*(2**23)/128 
-SAMPLE_FREQUENCY = 3600.0e6 
+SNAPSHOT_BLOCK_SIZE =4*4*(2**23) / 2
+SAMPLE_FREQUENCY = 3600.0 # MHz and us
 
 
 def plot_signal(signal):
-    signal_axis = np.linspace(0, (len(signal)/SAMPLE_FREQUENCY) * 1e6, len(signal), endpoint=False)
+    signal_axis = np.linspace(0, (len(signal)/SAMPLE_FREQUENCY), len(signal), endpoint=False)
     fig = plt.figure()
     ax_signal0 = fig.add_subplot(111)
     ax_signal0.plot(signal_axis, signal, ",")
@@ -60,13 +60,14 @@ fpga = corr.katcp_wrapper.FpgaClient("localhost", 7147, timeout=80)
 fpga.write_int("trig_level", 0)
 if raw_input("look at untriggered data? [y/n]  ") == "y":
     signal = get_triggered_snapshot(read_full_dram=True)
-    print "largest value in the signal = " + str(max( abs(max(signal)), abs(min(signal))))
+    logging.info("largest value in the signal = " + str(max( (max(signal)), abs(int(min(signal))))))
     plot_signal(signal)
     log_to_file(signal)
 fpga.write_int("trig_level", 3)
 while True:
     signal = get_triggered_snapshot()
     logging.info("got one! of length " + str(fpga.read_int("pulse_length")))
+    logging.info("largest value in the signal = " + str(max( (max(signal)), abs(int(min(signal))))))
     plt.close('all')
     if raw_input("look at signal? [y/n]  ") == "y":
         plot_signal(signal)

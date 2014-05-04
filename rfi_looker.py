@@ -18,7 +18,7 @@ if filename == "": # default to the most recent file
 else:
     filename = results_directory + filename
 signal = np.load(filename)
-decimation_factor = int(len(signal)/2**10) + 1
+decimation_factor = int(len(signal)/2**20) + 1
 print "decimation factor: " + str(decimation_factor)
 if decimation_factor >= 2 :
     signal_decimated = scipy.signal.decimate(signal, decimation_factor, n=1, ftype="fir")
@@ -26,7 +26,7 @@ else:
     signal_decimated = signal
 print "len : " + str(len(signal_decimated))
 axis = np.linspace(0, decimation_factor * len(signal_decimated)/SAMPLE_FREQUENCY, len(signal_decimated), endpoint=False)
-plt.plot(axis, signal_decimated, "b-")
+plt.plot(axis, signal_decimated, "b.")
 plt.show()
 # plot the signal decimated by a paramamter (defualt: 1)
 
