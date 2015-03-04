@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+SNAPBLOCK_NAME = 'snapshot'
+SNAPSHOT_SIZE = 8 * (2**20)
+
 import corr
 import struct
 import matplotlib.pyplot as plt
@@ -7,8 +10,6 @@ import numpy
 import time
 
 fpga = corr.katcp_wrapper.FpgaClient("localhost")
-fpga.write_int("trig_level", 5)
-fpga.write_int("trig_gate", 1)
 fpga.snapshot_arm("adc0_snap", man_trig=False, man_valid=False, offset=-1, circular_capture=False)
 time.sleep(1)
 sig_raw = fpga.read_dram(4*4*(2**19)/(2*10))
