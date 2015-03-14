@@ -11,12 +11,13 @@ parser = argparse.ArgumentParser(description = 'Capture transients from GPIO tri
 parser.add_argument('--calibrate', default=False, type=bool)
 parser.add_argument('--plot_time', default=False, type=bool)
 parser.add_argument('--plot_freq', default=False, type=bool)
-parser.add_argument('--force_trigger', default=False, type=bool)
+parser.add_argument('--force_gpio_trigger', default=False, type=bool)
+parser.add_argument('--force_snap_trigger', default=False, type=bool)
 parser.add_argument('--pos_time_us', default=0, type=float)
 parser.add_argument('--neg_time_us', default=0, type=float)
 parser.add_argument('--host', default='192.168.14.30', type=str)
 parser.add_argument('--samples', default=2**20, type=int)
-parser.add_argument('--trig_level', default=20, type=int)
+parser.add_argument('--trig_level', default=10, type=int)
 parser.add_argument('--capture_dir', default='/tmp/', type=str)
 
 args = parser.parse_args()
@@ -38,10 +39,16 @@ print('for neg edge time of {t} us, setting {s} samples'.format(t = args.neg_tim
 fpga.write_int('neg_edge_time', neg_edge_samples)
 
 fpga.write_int('trig_level', args.trig_level)
-fpga.write_int('force_trigger_arm', args.force_trigger)
+fpga.write_int('force_trigger_arm', args.force_gpio_trigger)
 
 while True:
-    fpga.snapshot_arm('snapshot', man_trig=args.force_trigger, man_valid=False, offset=-1, circular_capture=False)
+    fpga.write_int('reset_triggered_latch', 1)
+    time.sleep(0.1)
+    fpga.write_int('reset_triggered_latch', 0)
+    fpga.write_int('force_trigger_arm', 0)
+    time.sleep(0.1)
+    fpga.write_int('force_trigger_arm', args.force_gpio_trigger)
+    fpga.snapshot_arm('snapshot', man_trig=args.force_snap_trigger, man_valid=False, offset=-1, circular_capture=False)
     while fpga.read_int('triggered_latch') == 0:
         pass
     edge = 'pos' if fpga.read_uint('gpioa_state_snap') else 'neg'
@@ -50,14 +57,14 @@ while True:
     time.sleep(0.1)
     raw = fpga.read_dram(args.samples)
     signal = np.frombuffer(raw, dtype=np.int8)
-    x0 = signal[0:len(signal)+1:2]
-    x1 = signal[1:len(signal)+1:2]
-    x0 = x0 - np.mean(x0)
-    x1 = x1 - np.mean(x1)
-    signal = []
-    for idx, val in enumerate(x0):
-        signal.append(val)
-        signal.append(x1[idx])
+#    x0 = signal[0:len(signal)+1:2]
+#    x1 = signal[1:len(signal)+1:2]
+#    x0 = x0 - np.mean(x0)
+ #   x1 = x1 - np.mean(x1)
+ #   signal = []
+ #   for idx, val in enumerate(x0):
+ #       signal.append(val)
+#        signal.append(x1[idx])
     file_name = '{d}/{t}_{e}'.format(d = args.capture_dir, t = snap_time, e = edge)
     with open(file_name, 'w') as f:
         f.write(signal)
