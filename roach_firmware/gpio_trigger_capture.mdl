@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.373"
+    ComputedModelVersion    "1.374"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -55,8 +55,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1884.0, 993.0]
-	ZoomFactor		[1.5]
-	Offset			[644.33175360902578, 909.9114901543071]
+	ZoomFactor		[1.25]
+	Offset			[262.29406304993859, 1129.3501092571889]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dbeuser"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 04 16:32:10 2015"
+  LastModifiedDate	  "Wed Mar 04 19:11:57 2015"
   RTWModifiedTimeStamp	  347277734
-  ModelVersionFormat	  "1.%<AutoIncrement:373>"
+  ModelVersionFormat	  "1.%<AutoIncrement:374>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -871,12 +871,12 @@ Model {
     ScreenColor		    "white"
     PaperOrientation	    "landscape"
     PaperPositionMode	    "auto"
-    PaperType		    "A4"
+    PaperType		    "A0"
     PaperUnits		    "centimeters"
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "1037"
     Block {
@@ -4460,7 +4460,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"8388"
+	SIDHighWatermark	"8430"
 	SIDPrevWatermark	"6832"
 	Block {
 	  BlockType		  Inport
@@ -4473,10 +4473,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_force_trigger_arm_user_data_out"
-	  SID			  "789:8382"
+	  SID			  "789:8424"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  8327
+	  ZOrder		  8369
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -4519,10 +4519,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "789:8383"
+	  SID			  "789:8425"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  8328
+	  ZOrder		  8370
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -4550,10 +4550,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "789:8388"
+	  SID			  "789:8430"
 	  Ports			  [1, 1]
 	  Position		  [1300, 100, 1350, 120]
-	  ZOrder		  8333
+	  ZOrder		  8375
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -4581,10 +4581,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "789:8387"
+	  SID			  "789:8429"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  8332
+	  ZOrder		  8374
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -4879,7 +4879,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"7882"
+	SIDHighWatermark	"7912"
 	SIDPrevWatermark	"6832"
 	Block {
 	  BlockType		  Inport
@@ -4892,10 +4892,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "assert_reg"
-	  SID			  "801:7881"
+	  SID			  "801:7911"
 	  Ports			  [1, 1]
 	  Position		  [200, 100, 250, 120]
-	  ZOrder		  7826
+	  ZOrder		  7856
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
@@ -4930,10 +4930,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "cast_gw"
-	  SID			  "801:7879"
+	  SID			  "801:7909"
 	  Ports			  [1, 1]
 	  Position		  [700, 100, 750, 120]
-	  ZOrder		  7824
+	  ZOrder		  7854
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Convert"
 	  SourceType		  "Xilinx Type Converter Block"
@@ -4968,10 +4968,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_gpioa_0_status_user_data_in"
-	  SID			  "801:7880"
+	  SID			  "801:7910"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  7825
+	  ZOrder		  7855
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway Out"
 	  SourceType		  "Xilinx Gateway Out Block"
@@ -5003,10 +5003,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "801:7878"
+	  SID			  "801:7908"
 	  Ports			  [1, 1]
 	  Position		  [600, 100, 650, 120]
-	  ZOrder		  7823
+	  ZOrder		  7853
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -5034,10 +5034,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "801:7882"
+	  SID			  "801:7912"
 	  Ports			  [1, 1]
 	  Position		  [300, 100, 350, 120]
-	  ZOrder		  7827
+	  ZOrder		  7857
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -5285,7 +5285,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"6877"
+	SIDHighWatermark	"6907"
 	SIDPrevWatermark	"6832"
 	Block {
 	  BlockType		  Inport
@@ -5298,10 +5298,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "assert_reg"
-	  SID			  "1032:6876"
+	  SID			  "1032:6906"
 	  Ports			  [1, 1]
 	  Position		  [200, 100, 250, 120]
-	  ZOrder		  6821
+	  ZOrder		  6851
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
@@ -5336,10 +5336,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "cast_gw"
-	  SID			  "1032:6874"
+	  SID			  "1032:6904"
 	  Ports			  [1, 1]
 	  Position		  [700, 100, 750, 120]
-	  ZOrder		  6819
+	  ZOrder		  6849
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Convert"
 	  SourceType		  "Xilinx Type Converter Block"
@@ -5374,10 +5374,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_gpioa_state_snap_user_data_in"
-	  SID			  "1032:6875"
+	  SID			  "1032:6905"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  6820
+	  ZOrder		  6850
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway Out"
 	  SourceType		  "Xilinx Gateway Out Block"
@@ -5409,10 +5409,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "1032:6873"
+	  SID			  "1032:6903"
 	  Ports			  [1, 1]
 	  Position		  [600, 100, 650, 120]
-	  ZOrder		  6818
+	  ZOrder		  6848
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -5440,10 +5440,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "1032:6877"
+	  SID			  "1032:6907"
 	  Ports			  [1, 1]
 	  Position		  [300, 100, 350, 120]
-	  ZOrder		  6822
+	  ZOrder		  6852
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -5756,7 +5756,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"9089"
+	SIDHighWatermark	"9131"
 	SIDPrevWatermark	"6832"
 	Block {
 	  BlockType		  Inport
@@ -5769,10 +5769,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_led_1_control_user_data_out"
-	  SID			  "700:9083"
+	  SID			  "700:9125"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  9010
+	  ZOrder		  9052
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -5815,10 +5815,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "700:9084"
+	  SID			  "700:9126"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  9011
+	  ZOrder		  9053
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -5846,10 +5846,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "700:9089"
+	  SID			  "700:9131"
 	  Ports			  [1, 1]
 	  Position		  [1300, 100, 1350, 120]
-	  ZOrder		  9016
+	  ZOrder		  9058
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -5877,10 +5877,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "700:9088"
+	  SID			  "700:9130"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  9015
+	  ZOrder		  9057
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -6124,7 +6124,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"7099"
+	SIDHighWatermark	"7141"
 	SIDPrevWatermark	"6832"
 	Block {
 	  BlockType		  Inport
@@ -6137,10 +6137,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_neg_edge_time_user_data_out"
-	  SID			  "1001:7093"
+	  SID			  "1001:7135"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  7038
+	  ZOrder		  7080
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -6183,10 +6183,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "1001:7094"
+	  SID			  "1001:7136"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  7039
+	  ZOrder		  7081
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -6214,10 +6214,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "1001:7099"
+	  SID			  "1001:7141"
 	  Ports			  [1, 1]
 	  Position		  [1300, 100, 1350, 120]
-	  ZOrder		  7044
+	  ZOrder		  7086
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -6245,10 +6245,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "1001:7098"
+	  SID			  "1001:7140"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  7043
+	  ZOrder		  7085
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -6492,7 +6492,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"7094"
+	SIDHighWatermark	"7136"
 	SIDPrevWatermark	"6832"
 	Block {
 	  BlockType		  Inport
@@ -6505,10 +6505,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_pos_edge_time_user_data_out"
-	  SID			  "999:7088"
+	  SID			  "999:7130"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  7033
+	  ZOrder		  7075
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -6551,10 +6551,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "999:7089"
+	  SID			  "999:7131"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  7034
+	  ZOrder		  7076
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -6582,10 +6582,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "999:7094"
+	  SID			  "999:7136"
 	  Ports			  [1, 1]
 	  Position		  [1300, 100, 1350, 120]
-	  ZOrder		  7039
+	  ZOrder		  7081
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -6613,10 +6613,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "999:7093"
+	  SID			  "999:7135"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  7038
+	  ZOrder		  7080
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -6860,7 +6860,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"6916"
+	SIDHighWatermark	"6952"
 	SIDPrevWatermark	"6832"
 	Block {
 	  BlockType		  Inport
@@ -6873,10 +6873,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_reset_triggered_latch_user_data_out"
-	  SID			  "1026:6911"
+	  SID			  "1026:6947"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  6856
+	  ZOrder		  6892
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -6919,10 +6919,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "1026:6912"
+	  SID			  "1026:6948"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  6857
+	  ZOrder		  6893
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -6950,10 +6950,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "1026:6916"
+	  SID			  "1026:6952"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  6861
+	  ZOrder		  6897
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -16569,7 +16569,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "8381"
+	    SIDHighWatermark	    "8423"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "sim_1"
@@ -16581,10 +16581,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "gpio_trigger_capture_snap64_ctrl_user_data_out"
-	      SID		      "780:1026:8375"
+	      SID		      "780:1026:8417"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      8320
+	      ZOrder		      8362
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway In"
 	      SourceType	      "Xilinx Gateway In Block"
@@ -16627,10 +16627,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "780:1026:8376"
+	      SID		      "780:1026:8418"
 	      Ports		      [1, 1]
 	      Position		      [1000, 100, 1050, 120]
-	      ZOrder		      8321
+	      ZOrder		      8363
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -16659,10 +16659,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "780:1026:8381"
+	      SID		      "780:1026:8423"
 	      Ports		      [1, 1]
 	      Position		      [1300, 100, 1350, 120]
-	      ZOrder		      8326
+	      ZOrder		      8368
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -16690,10 +16690,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "slice_reg"
-	      SID		      "780:1026:8380"
+	      SID		      "780:1026:8422"
 	      Ports		      [1, 1]
 	      Position		      [1100, 100, 1150, 120]
-	      ZOrder		      8325
+	      ZOrder		      8367
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
@@ -17067,7 +17067,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "7917"
+	    SIDHighWatermark	    "7947"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "out_reg"
@@ -17079,10 +17079,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "assert_reg"
-	      SID		      "780:1034:7916"
+	      SID		      "780:1034:7946"
 	      Ports		      [1, 1]
 	      Position		      [200, 100, 250, 120]
-	      ZOrder		      7861
+	      ZOrder		      7891
 	      ShowName		      off
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Assert"
@@ -17117,10 +17117,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "cast_gw"
-	      SID		      "780:1034:7914"
+	      SID		      "780:1034:7944"
 	      Ports		      [1, 1]
 	      Position		      [700, 100, 750, 120]
-	      ZOrder		      7859
+	      ZOrder		      7889
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Convert"
 	      SourceType	      "Xilinx Type Converter Block"
@@ -17156,10 +17156,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "gpio_trigger_capture_snap64_status_user_data_in"
-	      SID		      "780:1034:7915"
+	      SID		      "780:1034:7945"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      7860
+	      ZOrder		      7890
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway Out"
 	      SourceType	      "Xilinx Gateway Out Block"
@@ -17191,10 +17191,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "780:1034:7913"
+	      SID		      "780:1034:7943"
 	      Ports		      [1, 1]
 	      Position		      [600, 100, 650, 120]
-	      ZOrder		      7858
+	      ZOrder		      7888
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -17223,10 +17223,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "780:1034:7917"
+	      SID		      "780:1034:7947"
 	      Ports		      [1, 1]
 	      Position		      [300, 100, 350, 120]
-	      ZOrder		      7862
+	      ZOrder		      7892
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -22330,7 +22330,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "8122"
+	    SIDHighWatermark	    "8164"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "sim_1"
@@ -22342,10 +22342,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "gpio_trigger_capture_snapshot_ctrl_user_data_out"
-	      SID		      "815:1026:8116"
+	      SID		      "815:1026:8158"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      8061
+	      ZOrder		      8103
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway In"
 	      SourceType	      "Xilinx Gateway In Block"
@@ -22388,10 +22388,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "815:1026:8117"
+	      SID		      "815:1026:8159"
 	      Ports		      [1, 1]
 	      Position		      [1000, 100, 1050, 120]
-	      ZOrder		      8062
+	      ZOrder		      8104
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -22420,10 +22420,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "815:1026:8122"
+	      SID		      "815:1026:8164"
 	      Ports		      [1, 1]
 	      Position		      [1300, 100, 1350, 120]
-	      ZOrder		      8067
+	      ZOrder		      8109
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -22451,10 +22451,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "slice_reg"
-	      SID		      "815:1026:8121"
+	      SID		      "815:1026:8163"
 	      Ports		      [1, 1]
 	      Position		      [1100, 100, 1150, 120]
-	      ZOrder		      8066
+	      ZOrder		      8108
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
@@ -22914,7 +22914,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "7732"
+	    SIDHighWatermark	    "7762"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "out_reg"
@@ -22926,10 +22926,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "assert_reg"
-	      SID		      "815:1034:7731"
+	      SID		      "815:1034:7761"
 	      Ports		      [1, 1]
 	      Position		      [200, 100, 250, 120]
-	      ZOrder		      7676
+	      ZOrder		      7706
 	      ShowName		      off
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Assert"
@@ -22964,10 +22964,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "cast_gw"
-	      SID		      "815:1034:7729"
+	      SID		      "815:1034:7759"
 	      Ports		      [1, 1]
 	      Position		      [700, 100, 750, 120]
-	      ZOrder		      7674
+	      ZOrder		      7704
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Convert"
 	      SourceType	      "Xilinx Type Converter Block"
@@ -23003,10 +23003,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "gpio_trigger_capture_snapshot_status_user_data_in"
-	      SID		      "815:1034:7730"
+	      SID		      "815:1034:7760"
 	      Ports		      [1, 1]
 	      Position		      [900, 100, 950, 120]
-	      ZOrder		      7675
+	      ZOrder		      7705
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Gateway Out"
 	      SourceType	      "Xilinx Gateway Out Block"
@@ -23038,10 +23038,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "io_delay"
-	      SID		      "815:1034:7728"
+	      SID		      "815:1034:7758"
 	      Ports		      [1, 1]
 	      Position		      [600, 100, 650, 120]
-	      ZOrder		      7673
+	      ZOrder		      7703
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
@@ -23070,10 +23070,10 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "reint1"
-	      SID		      "815:1034:7732"
+	      SID		      "815:1034:7762"
 	      Ports		      [1, 1]
 	      Position		      [300, 100, 350, 120]
-	      ZOrder		      7677
+	      ZOrder		      7707
 	      LibraryVersion	      "1.2"
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
@@ -23760,7 +23760,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"11537"
+	SIDHighWatermark	"11579"
 	SIDPrevWatermark	"6530"
 	Block {
 	  BlockType		  Inport
@@ -23773,10 +23773,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_trig_level_user_data_out"
-	  SID			  "835:11531"
+	  SID			  "835:11573"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  11480
+	  ZOrder		  11522
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway In"
 	  SourceType		  "Xilinx Gateway In Block"
@@ -23819,10 +23819,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "835:11532"
+	  SID			  "835:11574"
 	  Ports			  [1, 1]
 	  Position		  [1000, 100, 1050, 120]
-	  ZOrder		  11481
+	  ZOrder		  11523
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -23850,10 +23850,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "835:11537"
+	  SID			  "835:11579"
 	  Ports			  [1, 1]
 	  Position		  [1300, 100, 1350, 120]
-	  ZOrder		  11486
+	  ZOrder		  11528
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
@@ -23881,10 +23881,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice_reg"
-	  SID			  "835:11536"
+	  SID			  "835:11578"
 	  Ports			  [1, 1]
 	  Position		  [1100, 100, 1150, 120]
-	  ZOrder		  11485
+	  ZOrder		  11527
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -24172,15 +24172,15 @@ Model {
 	  has_advanced_control	  "0"
 	  sggui_pos		  "1255,19,464,211"
 	  block_type		  "register"
-	  sg_icon_stat		  "60,56,2,1,white,blue,0,0589862c,right,,[ ],[ ]"
+	  sg_icon_stat		  "60,56,2,1,white,blue,0,140cc11c,right,,[ ],[ ]"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 56 56 0 ],[0.77 0.82 0.91"
 	  " ]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\npatch([12.2 23.76 31.76 39.76 47.76 31.76 20.2 12.2 ],[36.88 36.88 44.8"
 	  "8 36.88 44.88 44.88 44.88 36.88 ],[1 1 1 ]);\npatch([20.2 31.76 23.76 12.2 20.2 ],[28.88 28.88 36.88 36.88 28.88 ],"
 	  "[0.931 0.946 0.973 ]);\npatch([12.2 23.76 31.76 20.2 12.2 ],[20.88 20.88 28.88 28.88 20.88 ],[1 1 1 ]);\npatch([20."
 	  "2 47.76 39.76 31.76 23.76 12.2 20.2 ],[12.88 12.88 20.88 12.88 20.88 20.88 12.88 ],[0.931 0.946 0.973 ]);\nfprintf("
 	  "'','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'d'"
-	  ");\ncolor('black');port_label('input',2,'rst');\ncolor('red');port_label('output',1,'q (!)  ');\ncolor('black');dis"
-	  "p('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');"
+	  ");\ncolor('black');port_label('input',2,'rst');\ncolor('black');port_label('output',1,'q');\ncolor('black');disp('z"
+	  "^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');"
 	}
 	Block {
 	  BlockType		  Reference
@@ -26905,7 +26905,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"8190"
+	SIDHighWatermark	"8220"
 	SIDPrevWatermark	"6795"
 	Block {
 	  BlockType		  Inport
@@ -26918,10 +26918,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "assert_reg"
-	  SID			  "963:8189"
+	  SID			  "963:8219"
 	  Ports			  [1, 1]
 	  Position		  [200, 100, 250, 120]
-	  ZOrder		  8141
+	  ZOrder		  8171
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
@@ -26956,10 +26956,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "cast_gw"
-	  SID			  "963:8187"
+	  SID			  "963:8217"
 	  Ports			  [1, 1]
 	  Position		  [700, 100, 750, 120]
-	  ZOrder		  8139
+	  ZOrder		  8169
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Convert"
 	  SourceType		  "Xilinx Type Converter Block"
@@ -26994,10 +26994,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "gpio_trigger_capture_triggered_latch_user_data_in"
-	  SID			  "963:8188"
+	  SID			  "963:8218"
 	  Ports			  [1, 1]
 	  Position		  [900, 100, 950, 120]
-	  ZOrder		  8140
+	  ZOrder		  8170
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Gateway Out"
 	  SourceType		  "Xilinx Gateway Out Block"
@@ -27029,10 +27029,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "io_delay"
-	  SID			  "963:8186"
+	  SID			  "963:8216"
 	  Ports			  [1, 1]
 	  Position		  [600, 100, 650, 120]
-	  ZOrder		  8138
+	  ZOrder		  8168
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -27060,10 +27060,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "reint1"
-	  SID			  "963:8190"
+	  SID			  "963:8220"
 	  Ports			  [1, 1]
 	  Position		  [300, 100, 350, 120]
-	  ZOrder		  8142
+	  ZOrder		  8172
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Reinterpret"
 	  SourceType		  "Xilinx Type Reinterpreter Block"
