@@ -14,7 +14,7 @@ parser.add_argument('--plot_freq', action='store_true')
 parser.add_argument('--force_snap_trigger', action='store_true')
 parser.add_argument('--pos_delay_ms', default=0, type=float)
 parser.add_argument('--neg_delay_ms', default=0, type=float)
-parser.add_argument('--period_ms', default=0, type=float)
+parser.add_argument('--period_ms', default=1000, type=float)
 parser.add_argument('--host', default='192.168.14.30', type=str)
 parser.add_argument('--samples', default=2**20, type=int)
 parser.add_argument('--capture_dir', default='/tmp/', type=str)
@@ -26,8 +26,12 @@ if args.calibrate == True:
 
 fpga = corr.katcp_wrapper.FpgaClient(args.host)
 time.sleep(0.1)
-clock_speed = int(fpga.est_brd_clk())
+clock_speed = int(fpga.est_brd_clk()) * 10**6
 print('got clk speed of: {cs}'.format(cs = clock_speed))
+
+period_samples = int((args.period_ms / 10**3) / (1.0/clock_speed))
+print('for period of {t} ms, setting {s} samples'.format(t = args.period_ms, s = period_samples))
+fpga.write_int('period', period_samples)
 
 pos_delay_samples = int((args.pos_delay_ms / 10**3)/(1.0/clock_speed))
 print('for positive edge delay time of {t} ms, setting {s} samples'.format(t = args.pos_delay_ms, s = pos_delay_samples))
@@ -38,10 +42,12 @@ print('for negative edge delay time of {t} ms, setting {s} samples'.format(t = a
 fpga.write_int('neg_delay', neg_delay_samples)
 
 while True:
+    fpga.write_int('reset_triggered_latch', 1)
+    time.sleep(0.01)
+    fpga.write_int('reset_triggered_latch', 0)
     fpga.snapshot_arm('snapshot', man_trig=args.force_snap_trigger, man_valid=False, offset=-1, circular_capture=False)
     while (fpga.read_uint('triggered_latch') == 0) and (args.force_snap_trigger == False):
         pass
-    fpga.write_int('reset_triggered_latch', 1)
     fpga.write_int('led_1_control', 0)
     edge = 'pos' if fpga.read_uint('gpioa_0_status') else 'neg'
     snap_time = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S_%f')
@@ -65,6 +71,5 @@ while True:
         fft_axis = np.linspace(0, 1600/2, len(signal_fft), endpoint=False)
         plt.plot(fft_axis, np.abs(signal_fft))
         plt.show()
-    fpga.write_int('reset_triggered_latch', 0)
     fpga.write_int('led_1_control', 1)
 
