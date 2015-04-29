@@ -37,5 +37,6 @@ nosetests.xml
 
 # prevent adding of matlab compiled files
 /roach_firmware/**
-#but allow matching of .mdl files
+#but allow matching of .mdl and .slx files
 !/roach_firmware/*.mdl
+!/roach_firmware/*.slx
