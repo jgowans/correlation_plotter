@@ -80,11 +80,15 @@ class Correlator:
         self.logger.debug("Armed snapshot combination: {c}".format(c = combination))
 
     def block_trigger(self):
-        self.fpga.write_int('snap_trig_gate', 0)
+        ctrl = self.fpga.read_uint('control')
+        ctrl &= ~(1 << 1) # clear bit 1
+        self.fpga.write_int('control', ctrl)
         self.logger.debug("Snap trigger blocked")
 
     def allow_trigger(self):
-        self.fpga.write_int('snap_trig_gate', 1)
+        ctrl = self.fpga.read_uint('control')
+        ctrl |= (1 << 1) # set bit 1
+        self.fpga.write_int('control', ctrl)
         self.logger.debug("Snap trigger allowed")
 
     def get_snap_name(self, combination):
@@ -103,14 +107,22 @@ class Correlator:
     def set_shift_schedule(self, shift_schedule):
         """ Defines the FFT bit shift schedule
         """
-        self.fpga.write_int('fft_shift', shift_schedule)
+        ctrl = self.fpga.read_uint('control')
+        ctrl &= ~(0xFFF << 2)  # clear bit 2 -> bit 14
+        shift_schedule &= (0xFFF) # ensure only 12 bits
+        ctrl |= (shift_schedule << 2)
+        self.fpga.write_int('control', ctrl)
         self.logger.info("FFT shift schedule set to {s}".format(s = shift_schedule))
         self.re_sync()
 
     def re_sync(self):
-        self.fpga.write_int('manual_sync', 0)
-        self.fpga.write_int('manual_sync', 1)
-        self.fpga.write_int('manual_sync', 0)
+        ctrl  = self.fpga.read_uint('control')
+        ctrl &= 0xFFFE  # clear bit 0
+        self.fpga.write_int('control', ctrl)
+        ctrl |= 0x1  # set bit 0
+        self.fpga.write_int('control', ctrl)
+        ctrl &= 0xFFFE  # clear bit 0
+        self.fpga.write_int('control', ctrl)
         self.logger.info("Re-issed a sync pulse")
         time.sleep(0.1)
 
