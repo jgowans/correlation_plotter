@@ -28,14 +28,12 @@ class Correlator:
         time.sleep(0.1)
         self.num_channels = num_channels
         self.cross_combinations = list(itertools.combinations(range(num_channels), 2))  # [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
-        # only 0x0 has been implemented
-        #self.auto_combinations = [(x, x) for x in range(num_channels)] # [(0, 0), (1, 1), (2, 2), (3, 3)]
-        self.auto_combinations = [(0, 0)]
+        self.auto_combinations = [(0, 0)]  # only 0x0 has been implemented
         self.correlations = {}
         for comb in (self.cross_combinations + self.auto_combinations):
             self.correlations[comb] = Correlation(comb, self.fpga)
             self.correlations[comb].fetch_signal(force=True)  # ensure populated with some data
-        self.control_register = ControlRegister(self.fpga, self.logger.getChild('control_reg'))
+        self.control_reg = ControlRegister(self.fpga, self.logger.getChild('control_reg'))
 
     def fetch_crosses(self):
         """ Updates the snapshot blocks for all cross correlations
