@@ -8,44 +8,58 @@ from directionFinder_backend.correlator import Correlator
 import corr
 import itertools
 
-axes =  [[], [], []]
-lines = [[], [], []]
+axes =  [[], [], [], []]
+lines = [[], [], [], []]
 fig = plt.figure(1)
 
 def create_figure(time, frequency, cross):
     # time domain signals
-    axes[0].append(fig.add_subplot(3, 5, 1))
-    axes[0].append(fig.add_subplot(3, 5, 2, sharex=axes[0][0], sharey=axes[0][0]))
-    axes[0].append(fig.add_subplot(3, 5, 3, sharex=axes[0][0], sharey=axes[0][0]))
-    axes[0].append(fig.add_subplot(3, 5, 4, sharex=axes[0][0], sharey=axes[0][0]))
+    axes[0].append(fig.add_subplot(4, 5, 1))
+    axes[0].append(fig.add_subplot(4, 5, 2, sharex=axes[0][0], sharey=axes[0][0]))
+    axes[0].append(fig.add_subplot(4, 5, 3, sharex=axes[0][0], sharey=axes[0][0]))
+    axes[0].append(fig.add_subplot(4, 5, 4, sharex=axes[0][0], sharey=axes[0][0]))
     axes[0].append(None)
     axes[0][0].set_ylim([-130, 130])
     for idx in range(4):
         lines[0].append(axes[0][idx].plot(time[idx])[0])
     # single channel FFTs
-    axes[1].append(fig.add_subplot(3, 5, 6))
-    axes[1].append(fig.add_subplot(3, 5, 7, sharex=axes[1][0], sharey=axes[1][0]))
-    axes[1].append(fig.add_subplot(3, 5, 8, sharex=axes[1][0], sharey=axes[1][0]))
-    axes[1].append(fig.add_subplot(3, 5, 9, sharex=axes[1][0], sharey=axes[1][0]))
-    axes[1].append(fig.add_subplot(3, 5, 10, sharex=axes[1][0]))
+    axes[1].append(fig.add_subplot(4, 5, 6))
+    axes[1].append(fig.add_subplot(4, 5, 7, sharex=axes[1][0], sharey=axes[1][0]))
+    axes[1].append(fig.add_subplot(4, 5, 8, sharex=axes[1][0], sharey=axes[1][0]))
+    axes[1].append(fig.add_subplot(4, 5, 9, sharex=axes[1][0], sharey=axes[1][0]))
+    axes[1].append(fig.add_subplot(4, 5, 10, sharex=axes[1][0]))
     for idx in range(4):
         fft = np.square(np.abs(np.fft.rfft(time[idx])))
-        fft = fft / len(fft)
+        fft[0] = 0 # focing DC bin to 0. naughty... this should be done with ADC cal
+        fft = np.log10(fft)
         fft_x = np.linspace(0, 400, fft.shape[0])
         lines[1].append(axes[1][idx].plot(fft_x, fft)[0])
+    axes[1][0].set_ylim(bottom=0)
     fft_x = np.linspace(0, 400, frequency[0].shape[0])
-    lines[1].append(axes[1][4].plot(fft_x, frequency[0])[0])
+    lines[1].append(axes[1][4].plot(fft_x, np.log10(np.abs(frequency[0])))[0])
+    axes[1][-1].set_ylim(bottom=0)
     # cross correlations
-    axes[2].append(fig.add_subplot(3, 6, 13))
-    axes[2].append(fig.add_subplot(3, 6, 14, sharex=axes[2][0], sharey=axes[2][0]))
-    axes[2].append(fig.add_subplot(3, 6, 15, sharex=axes[2][0], sharey=axes[2][0]))
-    axes[2].append(fig.add_subplot(3, 6, 16, sharex=axes[2][0], sharey=axes[2][0]))
-    axes[2].append(fig.add_subplot(3, 6, 17, sharex=axes[2][0], sharey=axes[2][0]))
-    axes[2].append(fig.add_subplot(3, 6, 18, sharex=axes[2][0], sharey=axes[2][0]))
+    axes[2].append(fig.add_subplot(4, 6, 13))
+    axes[2].append(fig.add_subplot(4, 6, 14, sharex=axes[2][0], sharey=axes[2][0]))
+    axes[2].append(fig.add_subplot(4, 6, 15, sharex=axes[2][0], sharey=axes[2][0]))
+    axes[2].append(fig.add_subplot(4, 6, 16, sharex=axes[2][0], sharey=axes[2][0]))
+    axes[2].append(fig.add_subplot(4, 6, 17, sharex=axes[2][0], sharey=axes[2][0]))
+    axes[2].append(fig.add_subplot(4, 6, 18, sharex=axes[2][0], sharey=axes[2][0]))
     cross_x = np.linspace(0, 400, cross[0].shape[0])
     for idx in range(6):
         lines[2].append(
-            axes[2][idx].plot(cross_x, cross[idx])[0]
+            axes[2][idx].plot(cross_x, np.log10(np.abs(cross[idx])))[0]
+        )
+    axes[2][0].set_ylim(bottom=0)
+    axes[3].append(fig.add_subplot(4, 6, 19))
+    axes[3].append(fig.add_subplot(4, 6, 20, sharex=axes[3][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 21, sharex=axes[3][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 22, sharex=axes[3][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 23, sharex=axes[3][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 24, sharex=axes[3][0], sharey=axes[3][0]))
+    for idx in range(6):
+        lines[3].append(
+            axes[3][idx].plot(cross_x, np.angle(cross[idx]))[0]
         )
     fig.show()
 
@@ -55,11 +69,13 @@ def update_figure(time, frequency, cross):
         lines[0][idx].set_ydata(time[idx])
         fft = np.fft.rfft(time[idx])
         fft = np.abs( fft * np.conj(fft) ) # get autocorrelation
-        fft = fft / len(fft)
+        fft[0] = 0  # focing DC bin to 0. naughty... this should be done with ADC cal
+        fft = np.log10(fft)
         lines[1][idx].set_ydata(fft)
-    lines[1][4].set_ydata(np.abs(frequency[0]))
+    lines[1][4].set_ydata(np.log10(np.abs(frequency[0])))
     for idx in range(6):
-        lines[2][idx].set_ydata(cross[idx])
+        lines[2][idx].set_ydata(np.log10(np.abs(cross[idx])))
+        lines[3][idx].set_ydata(np.angle(cross[idx]))
     plt.pause(0.05)
 
 if __name__ == '__main__':
@@ -68,7 +84,7 @@ if __name__ == '__main__':
     print(fpga.est_brd_clk())
     correlator = Correlator()
     correlator.set_shift_schedule(0b1111101111)
-    correlator.set_accumulation_len(400)
+    correlator.set_accumulation_len(400000)
     correlator.re_sync()
     correlator.fetch_autos()
     snapshot = Snapshot(fpga, 
@@ -84,13 +100,18 @@ if __name__ == '__main__':
             snapshot.fetch_signal(force=True)
             time.append(snapshot.signal[0:2048])
         correlator.fetch_all()
-        frequency = [np.abs(correlator.correlations[(0,0)].snapshot.signal)]
-        frequency[0] = frequency[0] / len(frequency[0])
+        frequency = [(correlator.correlations[(0,0)].snapshot.signal)]
+        frequency[0][0] = 0  # focing DC bin to 0. naughty... this should be done with ADC cal
         print(sum(frequency[0]))
+        f = correlator.correlations[(0,1)].strongest_frequency()
+        #ph = correlator.correlations[(0,1)].phase_at_freq(f)
+        #print("f: {f}   ;   ph: {ph}".format(f = f, ph = ph))
         cross = []
         cross_combinations = list(itertools.combinations(range(4), 2))
         for comb in cross_combinations:
-            cross.append(np.abs(correlator.correlations[comb].snapshot.signal))
+            x = correlator.correlations[comb].snapshot.signal
+            x[0] = 0
+            cross.append(x)
         if created == True:
             update_figure(time, frequency, cross)
         else:
