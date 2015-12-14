@@ -29,15 +29,15 @@ def create_figure(time, frequency, cross):
     axes[1].append(fig.add_subplot(4, 5, 9, sharex=axes[1][0], sharey=axes[1][0]))
     axes[1].append(fig.add_subplot(4, 5, 10, sharex=axes[1][0]))
     for idx in range(4):
-        fft = np.square(np.abs(np.fft.rfft(time[idx])))
+        fft = np.square((np.fft.rfft(time[idx])))
         fft[0] = 0 # focing DC bin to 0. naughty... this should be done with ADC cal
-        fft = np.log10(fft)
+        fft = 10*np.log10(fft)
         fft_x = np.linspace(0, 400, fft.shape[0])
-        lines[1].append(axes[1][idx].plot(fft_x, fft)[0])
-    axes[1][0].set_ylim(bottom=0)
+        lines[1].append(axes[1][idx].plot(fft_x, fft, marker='.')[0])
+    #axes[1][0].set_ylim(bottom=0)
     fft_x = np.linspace(0, 400, frequency[0].shape[0])
-    lines[1].append(axes[1][4].plot(fft_x, np.log10(np.abs(frequency[0])))[0])
-    axes[1][-1].set_ylim(bottom=0)
+    lines[1].append(axes[1][4].plot(fft_x, 10*np.log10(np.abs(frequency[0])), marker='.')[0])
+    #axes[1][-1].set_ylim(bottom=0)
     # cross correlations
     axes[2].append(fig.add_subplot(4, 6, 13))
     axes[2].append(fig.add_subplot(4, 6, 14, sharex=axes[2][0], sharey=axes[2][0]))
@@ -47,16 +47,18 @@ def create_figure(time, frequency, cross):
     axes[2].append(fig.add_subplot(4, 6, 18, sharex=axes[2][0], sharey=axes[2][0]))
     cross_x = np.linspace(0, 400, cross[0].shape[0])
     for idx in range(6):
+        to_plot = np.abs(cross[idx])
+        to_plot = 10*np.log10(cross[idx])
         lines[2].append(
-            axes[2][idx].plot(cross_x, np.log10(np.abs(cross[idx])))[0]
+            axes[2][idx].plot(cross_x, to_plot)[0]
         )
     axes[2][0].set_ylim(bottom=0)
-    axes[3].append(fig.add_subplot(4, 6, 19))
-    axes[3].append(fig.add_subplot(4, 6, 20, sharex=axes[3][0], sharey=axes[3][0]))
-    axes[3].append(fig.add_subplot(4, 6, 21, sharex=axes[3][0], sharey=axes[3][0]))
-    axes[3].append(fig.add_subplot(4, 6, 22, sharex=axes[3][0], sharey=axes[3][0]))
-    axes[3].append(fig.add_subplot(4, 6, 23, sharex=axes[3][0], sharey=axes[3][0]))
-    axes[3].append(fig.add_subplot(4, 6, 24, sharex=axes[3][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 19, sharex=axes[2][0]))
+    axes[3].append(fig.add_subplot(4, 6, 20, sharex=axes[2][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 21, sharex=axes[2][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 22, sharex=axes[2][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 23, sharex=axes[2][0], sharey=axes[3][0]))
+    axes[3].append(fig.add_subplot(4, 6, 24, sharex=axes[2][0], sharey=axes[3][0]))
     for idx in range(6):
         lines[3].append(
             axes[3][idx].plot(cross_x, np.angle(cross[idx]))[0]
@@ -70,11 +72,11 @@ def update_figure(time, frequency, cross):
         fft = np.fft.rfft(time[idx])
         fft = np.abs( fft * np.conj(fft) ) # get autocorrelation
         fft[0] = 0  # focing DC bin to 0. naughty... this should be done with ADC cal
-        fft = np.log10(fft)
+        fft = 10*np.log10(fft)
         lines[1][idx].set_ydata(fft)
-    lines[1][4].set_ydata(np.log10(np.abs(frequency[0])))
+    lines[1][4].set_ydata(10*np.log10((np.abs(frequency[0]))))
     for idx in range(6):
-        lines[2][idx].set_ydata(np.log10(np.abs(cross[idx])))
+        lines[2][idx].set_ydata(10*np.log10((np.abs(cross[idx]))))
         lines[3][idx].set_ydata(np.angle(cross[idx]))
     plt.pause(0.05)
 
@@ -83,33 +85,28 @@ if __name__ == '__main__':
     time.sleep(1)
     print(fpga.est_brd_clk())
     correlator = Correlator()
-    correlator.set_shift_schedule(0b1111101111)
-    correlator.set_accumulation_len(400000)
+    correlator.set_shift_schedule(0b1111111111)
+    correlator.set_accumulation_len(4000)
     correlator.re_sync()
     correlator.fetch_autos()
-    snapshot = Snapshot(fpga, 
-                        'time_domain_snap',
-                        dtype = np.int8,
-                        cvalue = False)
+    correlator.fetch_time_domain_snapshot(force=True)
     created = False
     while True:
         time = []
+        correlator.fetch_time_domain_snapshot(force=True)
         for antenna_idx in range(4):
-            adcs = ['0I', '0Q', '1I', '1Q']
-            correlator.control_register.select_adc(adcs[antenna_idx])
-            snapshot.fetch_signal(force=True)
-            time.append(snapshot.signal[0:2048])
+            time.append(correlator.time_domain_signals[antenna_idx][0:2048])
         correlator.fetch_all()
-        frequency = [(correlator.correlations[(0,0)].snapshot.signal)]
+        frequency = [(correlator.frequency_correlations[(0,0)].signal)]
         frequency[0][0] = 0  # focing DC bin to 0. naughty... this should be done with ADC cal
         print(sum(frequency[0]))
-        f = correlator.correlations[(0,1)].strongest_frequency()
+        f = correlator.frequency_correlations[(0,1)].strongest_frequency()
         #ph = correlator.correlations[(0,1)].phase_at_freq(f)
         #print("f: {f}   ;   ph: {ph}".format(f = f, ph = ph))
         cross = []
         cross_combinations = list(itertools.combinations(range(4), 2))
         for comb in cross_combinations:
-            x = correlator.correlations[comb].snapshot.signal
+            x = correlator.frequency_correlations[comb].signal
             x[0] = 0
             cross.append(x)
         if created == True:
