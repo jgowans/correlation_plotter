@@ -63,6 +63,7 @@ def create_figure(time, frequency, cross):
         lines[3].append(
             axes[3][idx].plot(cross_x, np.angle(cross[idx]))[0]
         )
+#    axes[3][0].set_ylim(bottom=-0.05, top=0.05)
     fig.show()
 
 
@@ -81,12 +82,18 @@ def update_figure(time, frequency, cross):
     plt.pause(0.05)
 
 if __name__ == '__main__':
+    logger = logging.getLogger('main')
+    handler = logging.StreamHandler()
+    colored_formatter = ColoredFormatter("%(log_color)s%(asctime)s%(levelname)s:%(name)s:%(message)s")
+    handler.setFormatter(colored_formatter)
+    logger.addHandler(handler)
+    logger.setLevel(logging.DEBUG)
     fpga = corr.katcp_wrapper.FpgaClient('localhost', 7147, timeout=5)
     time.sleep(1)
     print(fpga.est_brd_clk())
-    correlator = Correlator()
-    correlator.set_shift_schedule(0b1111111111)
-    correlator.set_accumulation_len(4000)
+    correlator = Correlator(logger = logger.getChild('correlator'))
+    correlator.set_shift_schedule(0b00000000000)
+    correlator.set_accumulation_len(400000)
     correlator.re_sync()
     correlator.fetch_autos()
     correlator.fetch_time_domain_snapshot(force=True)
