@@ -7,6 +7,8 @@ from directionFinder_backend.snapshot import Snapshot
 from directionFinder_backend.correlator import Correlator
 import corr
 import itertools
+import logging
+from colorlog import ColoredFormatter
 
 axes =  [[], [], [], []]
 lines = [[], [], [], []]
@@ -46,13 +48,16 @@ def create_figure(time, frequency, cross):
     axes[2].append(fig.add_subplot(4, 6, 17, sharex=axes[2][0], sharey=axes[2][0]))
     axes[2].append(fig.add_subplot(4, 6, 18, sharex=axes[2][0], sharey=axes[2][0]))
     cross_x = np.linspace(0, 400, cross[0].shape[0])
+    baselines = list(itertools.combinations(range(4), 2))
     for idx in range(6):
-        to_plot = np.abs(cross[idx])
-        to_plot = 10*np.log10(cross[idx])
+        #to_plot = np.abs(cross[idx])
+        #to_plot = 10*np.log10(cross[idx])
+        a, b = baselines[idx]
+        to_plot = np.angle(np.fft.rfft(time[a]) * np.conj(np.fft.rfft(time[b])))[0:-1]
         lines[2].append(
             axes[2][idx].plot(cross_x, to_plot)[0]
         )
-    axes[2][0].set_ylim(bottom=0)
+    #axes[2][0].set_ylim(bottom=0)
     axes[3].append(fig.add_subplot(4, 6, 19, sharex=axes[2][0]))
     axes[3].append(fig.add_subplot(4, 6, 20, sharex=axes[2][0], sharey=axes[3][0]))
     axes[3].append(fig.add_subplot(4, 6, 21, sharex=axes[2][0], sharey=axes[3][0]))
@@ -76,8 +81,12 @@ def update_figure(time, frequency, cross):
         fft = 10*np.log10(fft)
         lines[1][idx].set_ydata(fft)
     lines[1][4].set_ydata(10*np.log10((np.abs(frequency[0]))))
+    baselines = list(itertools.combinations(range(4), 2))
     for idx in range(6):
-        lines[2][idx].set_ydata(10*np.log10((np.abs(cross[idx]))))
+        #to_plot = 10*np.log10((np.abs(cross[idx])))
+        a, b = baselines[idx]
+        to_plot = np.angle(np.fft.rfft(time[a]) * np.conj(np.fft.rfft(time[b])))[0:-1]
+        lines[2][idx].set_ydata(to_plot)
         lines[3][idx].set_ydata(np.angle(cross[idx]))
     plt.pause(0.05)
 
@@ -88,15 +97,14 @@ if __name__ == '__main__':
     handler.setFormatter(colored_formatter)
     logger.addHandler(handler)
     logger.setLevel(logging.DEBUG)
-    fpga = corr.katcp_wrapper.FpgaClient('localhost', 7147, timeout=5)
-    time.sleep(1)
-    print(fpga.est_brd_clk())
     correlator = Correlator(logger = logger.getChild('correlator'))
     correlator.set_shift_schedule(0b00000000000)
-    correlator.set_accumulation_len(400000)
+    correlator.set_accumulation_len(40000)
     correlator.re_sync()
     correlator.fetch_autos()
     correlator.fetch_time_domain_snapshot(force=True)
+    #correlator.apply_cable_length_calibrations('/home/jgowans/workspace/directionFinder_backend/config/cable_length_calibration.json')
+    #correlator.apply_frequency_bin_calibrations('/home/jgowans/workspace/directionFinder_backend/config/frequency_domain_calibration_direct_in_phase.json')
     created = False
     while True:
         time = []
@@ -106,7 +114,6 @@ if __name__ == '__main__':
         correlator.fetch_all()
         frequency = [(correlator.frequency_correlations[(0,0)].signal)]
         frequency[0][0] = 0  # focing DC bin to 0. naughty... this should be done with ADC cal
-        print(sum(frequency[0]))
         f = correlator.frequency_correlations[(0,1)].strongest_frequency()
         #ph = correlator.correlations[(0,1)].phase_at_freq(f)
         #print("f: {f}   ;   ph: {ph}".format(f = f, ph = ph))
