@@ -21,10 +21,24 @@ if __name__ == '__main__':
     time.sleep(1)
     correlator.set_impulse_filter_len(100)
     correlator.set_impulse_setpoint(1000)
+    correlator.apply_time_domain_calibration('/home/jgowans/workspace/directionFinder_backend/bin/time_domain_calibration.json')
     correlator.re_sync()
     correlator.impulse_arm()
 
     while True:
         logger.info("Impulse level: {}".format(correlator.get_current_impulse_level()))
-        correlator.impulse_fetch()
+        if correlator.impulse_fetch() == True:
+            #plt.plot(correlator.time_domain_signals[0])
+            #plt.plot(correlator.time_domain_signals[1])
+            #plt.plot(correlator.time_domain_signals[2])
+            #plt.plot(correlator.time_domain_signals[3])
+            correlator.do_time_domain_cross_correlation()
+            for baseline in correlator.cross_combinations:
+                #pass
+                plt.plot(
+                    correlator.time_domain_correlations_times[baseline],
+                    correlator.time_domain_correlations_values[baseline],
+                    marker = '.')
+            logger.info(correlator.time_domain_cross_correlations_peaks)
+            plt.show()
         time.sleep(1)

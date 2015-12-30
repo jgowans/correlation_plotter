@@ -103,8 +103,9 @@ if __name__ == '__main__':
     correlator.re_sync()
     correlator.fetch_autos()
     correlator.fetch_time_domain_snapshot(force=True)
-    #correlator.apply_cable_length_calibrations('/home/jgowans/workspace/directionFinder_backend/config/cable_length_calibration.json')
-    #correlator.apply_frequency_bin_calibrations('/home/jgowans/workspace/directionFinder_backend/config/frequency_domain_calibration_direct_in_phase.json')
+    correlator.apply_cable_length_calibrations('/home/jgowans/workspace/directionFinder_backend/config/cable_length_calibration.json')
+    #correlator.apply_frequency_bin_calibrations('/home/jgowans/workspace/directionFinder_backend/config/frequency_domain_calibration_through_chain.json')
+    correlator.apply_frequency_bin_calibrations('/home/jgowans/workspace/directionFinder_backend/config/frequency_domain_calibration_direct_in_phase.json')
     created = False
     while True:
         time = []
