@@ -50,10 +50,10 @@ def create_figure(time, frequency, cross):
     cross_x = np.linspace(0, 400, cross[0].shape[0])
     baselines = list(itertools.combinations(range(4), 2))
     for idx in range(6):
-        #to_plot = np.abs(cross[idx])
-        #to_plot = 10*np.log10(cross[idx])
-        a, b = baselines[idx]
-        to_plot = np.angle(np.fft.rfft(time[a]) * np.conj(np.fft.rfft(time[b])))[0:-1]
+        to_plot = np.abs(cross[idx])
+        to_plot = 10*np.log10(cross[idx])
+        #a, b = baselines[idx]
+        #to_plot = np.angle(np.fft.rfft(time[a]) * np.conj(np.fft.rfft(time[b])))[0:-1]
         lines[2].append(
             axes[2][idx].plot(cross_x, to_plot)[0]
         )
@@ -83,9 +83,9 @@ def update_figure(time, frequency, cross):
     lines[1][4].set_ydata(10*np.log10((np.abs(frequency[0]))))
     baselines = list(itertools.combinations(range(4), 2))
     for idx in range(6):
-        #to_plot = 10*np.log10((np.abs(cross[idx])))
-        a, b = baselines[idx]
-        to_plot = np.angle(np.fft.rfft(time[a]) * np.conj(np.fft.rfft(time[b])))[0:-1]
+        to_plot = 10*np.log10((np.abs(cross[idx])))
+        #a, b = baselines[idx]
+        #to_plot = np.angle(np.fft.rfft(time[a]) * np.conj(np.fft.rfft(time[b])))[0:-1]
         lines[2][idx].set_ydata(to_plot)
         lines[3][idx].set_ydata(np.angle(cross[idx]))
     plt.pause(0.05)
