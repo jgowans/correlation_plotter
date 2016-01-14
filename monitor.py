@@ -33,7 +33,7 @@ def create_figure(time, frequency, cross):
     for idx in range(4):
         fft = np.square((np.fft.rfft(time[idx])))
         fft[0] = 0 # focing DC bin to 0. naughty... this should be done with ADC cal
-        fft = 10*np.log10(fft)
+        fft = 10*np.log10(np.abs(fft))
         fft_x = np.linspace(0, 400, fft.shape[0])
         lines[1].append(axes[1][idx].plot(fft_x, fft, marker='.')[0])
     #axes[1][0].set_ylim(bottom=0)
@@ -103,9 +103,9 @@ if __name__ == '__main__':
     correlator.re_sync()
     correlator.fetch_autos()
     correlator.fetch_time_domain_snapshot(force=True)
-    correlator.apply_cable_length_calibrations('/home/jgowans/workspace/directionFinder_backend/config/cable_length_calibration.json')
+    correlator.add_cable_length_calibrations('/home/jgowans/workspace/directionFinder_backend/config/cable_length_calibration.json')
     #correlator.apply_frequency_bin_calibrations('/home/jgowans/workspace/directionFinder_backend/config/frequency_domain_calibration_through_chain.json')
-    correlator.apply_frequency_bin_calibrations('/home/jgowans/workspace/directionFinder_backend/config/frequency_domain_calibration_direct_in_phase.json')
+    correlator.add_frequency_bin_calibrations('/home/jgowans/workspace/directionFinder_backend/config/frequency_domain_calibration_direct_in_phase.json')
     created = False
     while True:
         time = []

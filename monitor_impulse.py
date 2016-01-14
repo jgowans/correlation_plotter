@@ -20,25 +20,38 @@ if __name__ == '__main__':
     correlator = Correlator(logger = logger.getChild('correlator'))
     time.sleep(1)
     correlator.set_impulse_filter_len(100)
-    correlator.set_impulse_setpoint(1000)
-    correlator.apply_time_domain_calibration('/home/jgowans/workspace/directionFinder_backend/bin/time_domain_calibration.json')
+    correlator.set_impulse_setpoint(231)
+    correlator.add_time_domain_calibration('/home/jgowans/workspace/directionFinder_backend/config/time_domain_calibration_long_sma_cables_only.json')
+    correlator.add_cable_length_calibrations('/home/jgowans/workspace/directionFinder_backend/config/cable_length_calibration.json')
     correlator.re_sync()
     correlator.impulse_arm()
+
+    fig = plt.figure()
+    axes = [[], []]
+
+    axes[0].append(fig.add_subplot(2, 4, 1))
+    axes[0].append(fig.add_subplot(2, 4, 2, sharex=axes[0][0], sharey=axes[0][0]))
+    axes[0].append(fig.add_subplot(2, 4, 3, sharex=axes[0][0], sharey=axes[0][0]))
+    axes[0].append(fig.add_subplot(2, 4, 4, sharex=axes[0][0], sharey=axes[0][0]))
+    axes[0][0].set_ylim([-130, 130])
+
+    axes[1].append(fig.add_subplot(2, 1, 2))
+
 
     while True:
         logger.info("Impulse level: {}".format(correlator.get_current_impulse_level()))
         if correlator.impulse_fetch() == True:
-            #plt.plot(correlator.time_domain_signals[0])
-            #plt.plot(correlator.time_domain_signals[1])
-            #plt.plot(correlator.time_domain_signals[2])
-            #plt.plot(correlator.time_domain_signals[3])
+            for ax_idx in range(len(axes[0])):
+                axes[0][ax_idx].cla()
+                axes[0][ax_idx].plot(correlator.time_domain_signals[ax_idx])
             correlator.do_time_domain_cross_correlation()
+            axes[1][0].cla()
             for baseline in correlator.cross_combinations:
-                #pass
-                plt.plot(
+                axes[1][0].plot(
                     correlator.time_domain_correlations_times[baseline],
                     correlator.time_domain_correlations_values[baseline],
                     marker = '.')
             logger.info(correlator.time_domain_cross_correlations_peaks)
-            plt.show()
-        time.sleep(1)
+            logger.info(correlator.visibilities_from_time())
+            plt.pause(0.05)
+        time.sleep(0.5)
