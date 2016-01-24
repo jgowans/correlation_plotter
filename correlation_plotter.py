@@ -1,36 +1,80 @@
 #!/usr/bin/env python
 
+import argparse
+import logging
+from colorlog import ColoredFormatter
 import time
-import numpy
+import os
+import numpy as np
 import matplotlib.pyplot as plt
-import threading
-import corr
-import struct
 import scipy.signal
 import scipy.constants
-import logging
-import os
-import json
-import shutil
-import csv
+import itertools
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s:" + logging.BASIC_FORMAT)
-config_file = os.getenv('HOME') + "/correlation_plotter_config"
-results_directory = os.getenv('HOME') + "/correlation_plotter_results/"
-SNAPSHOT_BLOCK_SIZE = 131072
-SAMPLE_FREQUENCY = 900.0e6
-RESAMPLE_FACTOR = 5.0
-#ANTENNA_SPACING_METRES = 4.32 #this is the beam length
-ANTENNA_SPACING_METRES = 3.53
+def load_signal(directory, filename):
+    sig = np.load("{d}/{f}".format(
+        d = directory,
+        f = filename))
+    return sig
+
+def load_signals(directory):
+    filenames = os.listdir(directory)
+    filenames.sort()
+    sig_len = len(load_signal(directory, filenames[0]))
+    signals = np.ndarray((len(filenames), sig_len))
+    for idx, filename in enumerate(filenames):
+        signals[idx] = load_signal(directory, filename)
+    return signals
+
+def plot_initial_signals(signals):
+    fig = plt.gcf()
+    for idx, signal in enumerate(signals):
+        subplot = fig.add_subplot(2, len(signals), idx + 1 + len(signals))
+        fft = np.fft.rfft(signal)
+        fft[150:350] = 0
+        subplot.plot(np.linspace(0, 400, len(fft)),
+                     np.abs(fft))
+        subplot = fig.add_subplot(2, len(signals), idx + 1)
+        subplot.plot(np.fft.irfft(fft))
+    return
+
+def do_cross_correlations(signals):
+    cross_combinations = list(itertools.combinations(range(signals), 2))
+    cross_correlations = {}
+    for comb in cross_combinations:
+        pass
 
 
-def plot_initial_signals(signal0, signal1):
-    # remove DC offset
-    signal0 = signal0 - numpy.mean(signal0)
-    signal1 = signal1 - numpy.mean(signal1)
-    # get time axis of full signal. Multiply end time by 1e6 to get units of microseconds
-    signal_axis = numpy.linspace(0, (SNAPSHOT_BLOCK_SIZE/SAMPLE_FREQUENCY) * 1e6, SNAPSHOT_BLOCK_SIZE, endpoint=False)
+#def do_cross_correlation(signal):
 
+
+
+if __name__ == '__main__':
+    # setup root logger. Shouldn't be used much but will catch unexpected messages
+    colored_formatter = ColoredFormatter("%(log_color)s%(asctime)s:%(levelname)s:%(name)s:%(message)s")
+    handler = logging.StreamHandler()
+    handler.setFormatter(colored_formatter)
+    handler.setLevel(logging.DEBUG)
+
+    root = logging.getLogger()
+    root.addHandler(handler)
+    root.setLevel(logging.INFO)
+
+    logger = logging.getLogger('main')
+    logger.propagate = False
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--d', type=str)
+    args = parser.parse_args()
+
+    signals = load_signals(args.d)
+    plot_initial_signals(signals)
+    plt.show()
+
+
+def dead_code():
     # get the FFT of the signals
     fft_signal0 = numpy.fft.rfft(signal0)
     fft_signal1 = numpy.fft.rfft(signal1)
@@ -170,36 +214,3 @@ def verify_paramaters():
     if raw_input("Is the above angle correct? ") != "y":
         exit()
 
-
-#ENTRY POINT
-global_config = json.load(open(config_file))
-#verify_paramaters()
-
-# connect to FPGA and program
-logging.info("starting programming and configuring")
-fpga = corr.katcp_wrapper.FpgaClient("localhost", 7147)
-time.sleep(1)
-fpga.progdev("jgowans_snapshot_no_fft_2014_Apr_17_1307.bof")
-#fpga.progdev("jgowans_snapshot_no_fft_2014_Mar_16_0748.bof")
-fpga.write_int("trig_level", 1)
-signal0, signal1 = get_triggered_snapshot()
-fpga.write_int("trig_level", 10)
-time.sleep(1)
-raw_input("Ready to continue when you are... ")
-
-while True:
-    signal0, signal1 = get_triggered_snapshot()
-    print("and the amplitude was: {:d}".format(int(max(signal0))))
-    timestamp = time.strftime("%y-%m-%d-%H-%M-%S")
-    user_response = raw_input("Use this signal [y], ignore it [n], or adjust the trigger level [a]:  ")
-    #user_response =  'n'
-    if user_response == "a":
-        print "Trigger is currently {:d}".format(fpga.read_int("trig_level"))
-        new_trigger = int(raw_input("What value should the trigger be?:  "))
-        fpga.write_int("trig_level", new_trigger)
-    if  user_response == "y":
-        angle = plot_correlation_and_get_angle(signal0, signal1)
-        user_response = raw_input("Should this vecor be logged to file? [y/n]  ")
-        if user_response == "y":
-            log_to_file(signal0, signal1, angle) #this should also log the PNG!
-    plt.close('all')
