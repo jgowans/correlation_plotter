@@ -19,8 +19,8 @@ if __name__ == '__main__':
 
     correlator = Correlator(logger = logger.getChild('correlator'))
     time.sleep(1)
-    correlator.set_impulse_filter_len(100)
-    correlator.set_impulse_setpoint(231)
+    correlator.set_impulse_filter_len(50)
+    correlator.set_impulse_setpoint(3772)
     correlator.add_time_domain_calibration('/home/jgowans/workspace/directionFinder_backend/config/time_domain_calibration_long_sma_cables_only.json')
     correlator.add_cable_length_calibrations('/home/jgowans/workspace/directionFinder_backend/config/cable_length_calibration.json')
     correlator.re_sync()
@@ -43,7 +43,7 @@ if __name__ == '__main__':
         if correlator.impulse_fetch() == True:
             for ax_idx in range(len(axes[0])):
                 axes[0][ax_idx].cla()
-                axes[0][ax_idx].plot(correlator.time_domain_signals[ax_idx])
+                axes[0][ax_idx].plot(correlator.time_domain_axis * 1e6, correlator.time_domain_signals[ax_idx])
             correlator.do_time_domain_cross_correlation()
             axes[1][0].cla()
             for baseline in correlator.cross_combinations:

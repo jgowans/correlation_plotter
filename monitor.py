@@ -113,6 +113,7 @@ if __name__ == '__main__':
         for antenna_idx in range(4):
             time.append(correlator.time_domain_signals[antenna_idx][0:2048])
         correlator.fetch_all()
+        correlator.apply_frequency_domain_calibrations()
         frequency = [(correlator.frequency_correlations[(0,0)].signal)]
         frequency[0][0] = 0  # focing DC bin to 0. naughty... this should be done with ADC cal
         f = correlator.frequency_correlations[(0,1)].strongest_frequency()

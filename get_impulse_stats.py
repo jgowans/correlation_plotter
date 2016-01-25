@@ -29,16 +29,16 @@ if __name__ == '__main__':
     time.sleep(1)
     correlator.set_impulse_filter_len(100)
     correlator.set_impulse_setpoint(100)
-    correlator.apply_time_domain_calibration('/home/jgowans/workspace/directionFinder_backend/bin/time_domain_calibration.json')
+    correlator.add_time_domain_calibration('/home/jgowans/workspace/directionFinder_backend/bin/time_domain_calibration.json')
     correlator.re_sync()
     correlator.impulse_arm()
 
     impulse_levels = []
 
-    for _ in range(10000):
+    for _ in range(1000):
         impulse_levels.append(
             correlator.get_current_impulse_level())
-        time.sleep(0.01)
+        #time.sleep(0.01)
 
     logger.info("Mean: {}".format(np.mean(impulse_levels)))
     logger.info("Std dev: {}".format(np.std(impulse_levels)))
