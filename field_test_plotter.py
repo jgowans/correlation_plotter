@@ -103,7 +103,6 @@ if __name__ == '__main__':
         delta_t = [(t - t_start).total_seconds() for t in results_keys]
         if len(results_vals) > 0:
             plt.plot(delta_t, results_vals, linestyle='', marker='o', label=freq)
-    plt.legend(title = 'Frequency (MHz):')
 
     # remove time offset by converting to t - t_start (seconds)
 
@@ -115,8 +114,10 @@ if __name__ == '__main__':
     gps_vals = [gps[x] for x in gps_keys]
     #gps_vals = np.unwrap(gps_vals[::-1])[::-1]
     delta_t = [(t - t_start).total_seconds() for t in gps_keys]
-    plt.plot(delta_t, gps_vals, color='red', linewidth=2)
+    plt.plot(delta_t, gps_vals, color='red', linewidth=2, label='GPS track')
     plt.title("GPS track vs DF system output for DEVICE (f MHz - f MHz)")
     plt.xlabel("Time (s)")
     plt.ylabel("Angle (rads)")
+    #plt.legend(title = 'Frequency (MHz):')
+    plt.legend()
     plt.show()
